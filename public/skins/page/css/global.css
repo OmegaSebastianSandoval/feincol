@@ -1,29 +1,213 @@
+/* @font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/skins/page/fonts/Montserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/skins/page/fonts/Montserrat-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/skins/page/fonts/Montserrat-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src:
+    url('/skins/page/fonts/Montserrat-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+ */
+
+
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('/skins/page/fonts/TitilliumWeb-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('/skins/page/fonts/TitilliumWeb-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('/skins/page/fonts/TitilliumWeb-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('/skins/page/fonts/TitilliumWeb-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('/skins/page/fonts/TitilliumWeb-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumWeb';
+  src: url('/skins/page/fonts/TitilliumWeb-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "TitilliumWeb", sans-serif;
   scroll-margin-top: 15rem;
   position: relative;
   /* border: 1px solid red; */
 }
+
 :root {
-  --blueO: #032262;
-  --blueC: #3a599b;
-  --verde: #80c341;
-  --verdeO: #649437;
-
-  --gris: #666362;
-  --grisO: #292929;
-  --white: #ffffff;
-
-  --grisC: #eff0f0;
-  --rojo: #ff4141;
-  --rojoO: #c80400;
-
+  --azul: #136ef7;
+  --azul-oscuro: #192a4b;
+  --azul-medio: #0630A4;
+  --azul-claro: #4C7BD1;
+  --azul-cielo: #E3EBF8;
+  --blanco: #FFFFFF;
+  --amarillo: #ffe840;
+  --gris-claro: #E5E5E5;
+  --gris-oscuro: #333333;
+  --gris-medio: #707070;
 }
+
 
 body {
   width: 100%;
@@ -39,7 +223,7 @@ body {
 /*******************
  UTILS FIN 
  *******************/
- .bg-azul-o {
+.bg-azul-o {
   background-color: var(--blueC);
 }
 
@@ -93,24 +277,26 @@ body {
 }
 
 
-.btn-azul {
-  background: var(--blueC) !important;
+.btn-azul-oscuro {
+  background: var(--azul-oscuro) !important;
   color: #FFF !important;
-  border: 1px solid var(--blueO);
-  border-radius: 15px;
+  border: 3px solid var(--amarillo);
+  border-radius: 38px;
   display: flex;
-  justify-content: center;
-  padding: 5px 25px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 13px;
   text-decoration: none;
   transition: all 300ms;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   width: fit-content;
+  gap: 10px;
 }
 
-.btn-azul:hover {
-  background: var(--blueO) !important;
-  border: 1px solid var(--blueO);
+.btn-azul-oscuro:hover {
+  background: var(--azul-medio) !important;
+ 
   color: #FFF;
 
 }
@@ -121,10 +307,32 @@ body {
 
 
 
+/*******************
+ HEADER INICIO 
+ *******************/
+ .header-top-info {
+  color: var(--azul-oscuro);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
 
 
+.welcome-text {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--azul-oscuro);
+}
+.highlight{
+  color: var(--azul);
+  font-size: 22px;
+}
 
-
+/*******************
+ HEADER FIN 
+ *******************/
 
 
 

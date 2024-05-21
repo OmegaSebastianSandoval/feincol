@@ -109,7 +109,7 @@
 		</h2>
 		<div class="pading-dashboard">
 			<div class="row">
-				<div class="col-4">
+				<div class="col-3">
 					<div class="contenedor-informacion">
 						<div class="icono telefono">
 							<img src="/skins/administracion/images/telefono.png">
@@ -120,7 +120,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-3">
 					<div class="contenedor-informacion">
 						<div class="icono correo">
 							<img src="/skins/administracion/images/correo.png">
@@ -132,7 +132,7 @@
 					</div>
 				</div>
 
-				<div class="col-4">
+				<div class="col-3">
 					<div class="contenedor-informacion">
 						<div class="icono direccion">
 							<img src="/skins/administracion/images/direccion.png">
@@ -140,6 +140,17 @@
 						<div class="contenido">
 							<h4>Dirección:</h4>
 							<div><?php echo $this->info->info_pagina_direccion_contacto; ?></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="contenedor-informacion">
+						<div class="icono direccion">
+							<img src="/skins/administracion/images/direccion.png">
+						</div>
+						<div class="contenido">
+							<h4>Horario:</h4>
+							<div><?php echo $this->info->info_pagina_info_horario; ?></div>
 						</div>
 					</div>
 				</div>

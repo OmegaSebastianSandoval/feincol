@@ -130,7 +130,7 @@
 			<div class="pading-dashboard">
 				<br>
 				<div class="row">
-					<div class="col-4 form-group">
+					<div class="col-3 form-group">
 						<label for="info_pagina_telefono" class="control-label">Teléfonos:</label>
 						<div class="input-group">
 							<div class="input-group-prepend ">
@@ -139,7 +139,7 @@
 							<textarea name="info_pagina_telefono" id="info_pagina_telefono" class="form-control" rows="2"><?= $this->content->info_pagina_telefono; ?></textarea>
 						</div>
 					</div>
-					<div class="col-4 form-group">
+					<div class="col-3 form-group">
 						<label for="info_pagina_correos_contacto" class="form-label">Correo Contacto:</label>
 						<div class="input-group">
 							<div class="input-group-prepend ">
@@ -148,13 +148,22 @@
 							<textarea name="info_pagina_correos_contacto" id="info_pagina_correos_contacto" class="form-control" rows="2"><?= $this->content->info_pagina_correos_contacto; ?></textarea>
 						</div>
 					</div>
-					<div class="col-4 form-group">
+					<div class="col-3 form-group">
 						<label for="info_pagina_direccion_contacto" class="form-label">Dirección:</label>
 						<div class="input-group">
 							<div class="input-group-prepend ">
 								<span class="input-group-text input-icono fondo-direccion"><i class="fas fa-map-marked-alt"></i></span>
 							</div>
 							<textarea name="info_pagina_direccion_contacto" id="info_pagina_direccion_contacto" class="form-control" rows="2"><?= $this->content->info_pagina_direccion_contacto; ?></textarea>
+						</div>
+					</div>
+					<div class="col-3 form-group">
+						<label for="info_pagina_info_horario" class="form-label">Horario:</label>
+						<div class="input-group">
+							<div class="input-group-prepend ">
+								<span class="input-group-text input-icono fondo-direccion"><i class="fas fa-map-marked-alt"></i></span>
+							</div>
+							<textarea name="info_pagina_info_horario" id="info_pagina_info_horario" class="form-control" rows="2"><?= $this->content->info_pagina_info_horario; ?></textarea>
 						</div>
 					</div>
 					<div class="col-6 form-group">

@@ -420,7 +420,7 @@ class Administracion_contenidoController extends Administracion_mainController
   {
     $array = array();
     $array['1'] = 'Home';
-    $array['2'] = 'Home 2';
+    $array['2'] = 'Header';
     return $array;
   }
 
