@@ -114,7 +114,24 @@ class Page_Model_Template_Template
 	}
 
 
+	/* public function banner($seccion)
+	{
+		$this->_view->seccionbanner = $seccion;
+		$publicidadModel = new Page_Model_DbTable_Publicidad();
+		$this->_view->banners = $publicidadModel->getList("publicidad_seccion = '$seccion' AND publicidad_estado = '1'", "orden ASC");
+
+		return $this->_view->getRoutPHP("modules/page/Views/template/bannerprincipal.php");
+	} */
 	public function banner($seccion)
+	{
+		$this->_view->seccionbanner = $seccion;
+		$publicidadModel = new Page_Model_DbTable_Publicidad();
+		$this->_view->banners = $publicidadModel->getList("publicidad_seccion = '$seccion' AND publicidad_estado = '1'", "orden ASC");
+
+		return $this->_view->getRoutPHP("modules/page/Views/template/bannersinternas.php");
+	}
+
+	public function bannerPrincipal($seccion)
 	{
 		$this->_view->seccionbanner = $seccion;
 		$publicidadModel = new Page_Model_DbTable_Publicidad();

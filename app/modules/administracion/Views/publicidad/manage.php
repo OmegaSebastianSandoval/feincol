@@ -2,7 +2,7 @@
     <?php echo $this->titlesection; ?>
 </h1>
 <div class="container-fluid">
-    <form class="text-left" enctype="multipart/form-data" method="post" action="<?php echo $this->routeform; ?>"  data-bs-toggle="validator">
+    <form class="text-left" enctype="multipart/form-data" method="post" action="<?php echo $this->routeform; ?>" data-bs-toggle="validator">
         <div class="content-dashboard">
             <input type="hidden" name="csrf" id="csrf" value="<?php echo $this->csrf ?>">
             <input type="hidden" name="csrf_section" id="csrf_section" value="<?php echo $this->csrf_section ?>">
@@ -17,11 +17,12 @@
                             <span class="input-group-text input-icono  fondo-cafe "><i class="far fa-list-alt"></i></span>
                         </div>
                         <script>
+                            cambiar_contenido()
                             function cambiar_contenido() {
-                                if (document.getElementById('publicidad_seccion').value != 1) {
-                                    document.getElementById('vid').style.display = "none";
+                                if (document.getElementById('publicidad_seccion').value.trim() != 100) {
+                                    document.getElementById('contenedor-posicion').style.display = "none";
                                 } else {
-                                    document.getElementById('vid').style.display = "block";
+                                    document.getElementById('contenedor-posicion').style.display = "block";
                                 }
 
                             }
@@ -41,7 +42,7 @@
                     </label>
                     <div class="help-block with-errors"></div>
                 </div>
-                <div class="col-6 form-group">
+                <div class="col-3 form-group">
                     <label for="publicidad_nombre" class="control-label">Nombre</label>
                     <label class="input-group">
                         <div class="input-group-prepend">
@@ -65,9 +66,31 @@
                     </label>
                     <div class="help-block with-errors"></div>
                 </div>
+                <div class="col-3 form-group">
+                    <label class="control-label">Mostrar info</label>
+                    <br>
+                    <input type="checkbox" name="mostrarinfo" value="1" class="form-control switch-form" <?php if ($this->getObjectVariable($this->content, 'mostrarinfo') == 1) {
+                                                                                                                echo "checked";
+                                                                                                            } ?>></input>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div id="contenedor-posicion" class="col-3 form-group no-banner no-carrousel no-acordion si-seccion" style="display: none;">
+					<label class="control-label " >Poiscion</label>
+					<label class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text input-icono  fondo-verde " ><i class="fas fa-align-center"></i></span>
+						</div>
+						<select class="form-control" name="publicidad_posicion"   >
+							<option value="">Seleccione...</option>
+							<?php foreach ($this->list_publicidad_posicion AS $key => $value ){?>
+								<option <?php if($this->getObjectVariable($this->content,"publicidad_posicion") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
+							<?php } ?>
+						</select>
+					</label>
+					<div class="help-block with-errors"></div>
+				</div>
 
-                <?php if (($this->content->publicidad_seccion != 3) && ($this->content->publicidad_seccion != 2)) { ?>
-                    <div class="col-6 form-group">
+                <!--  <div class="col-6 form-group">
                         <label for="publicidad_imagen">Imagen</label>
                         <input type="file" name="publicidad_imagen" id="publicidad_imagen" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
                         <div class="help-block with-errors"></div>
@@ -90,8 +113,8 @@
                                                                                                                                                 ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
                             </div>
                         <?php } ?>
-                    </div>
-                    <?php if ($this->content->publicidad_seccion != 3 && $this->content->publicidad_seccion != 2) { ?>
+                    </div> -->
+                <!-- <?php if ($this->content->publicidad_seccion != 3 && $this->content->publicidad_seccion != 2) { ?>
 
                         <div class="col-6 form-group" id="vid">
                             <label for="publicidad_video" class="control-label">Video</label>
@@ -103,8 +126,8 @@
                             </label>
                             <div class="help-block with-errors"></div>
                         </div>
-                    <?php } ?>
-                    <div class="col-3 form-group">
+                    <?php } ?> -->
+                <!--   <div class="col-3 form-group">
                         <label for="publicidad_color_fondo" class="control-label">Color Fondo</label>
                         <label class="input-group">
                             <div class="input-group-prepend">
@@ -113,8 +136,8 @@
                             <input type="text" value="<?= $this->content->publicidad_color_fondo; ?>" name="publicidad_color_fondo" id="publicidad_color_fondo" class="form-control colorpicker">
                         </label>
                         <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="col-3 form-group">
+                    </div> -->
+                <!--  <div class="col-3 form-group">
                         <label class="control-label">Estado</label>
                         <label class="input-group">
                             <div class="input-group-prepend">
@@ -132,63 +155,64 @@
                             </select>
                         </label>
                         <div class="help-block with-errors"></div>
-                    </div>
-                <?php } else { ?>
-                    <div class="col-3 form-group">
-                        <label for="publicidad_imagen">Imagen</label>
-                        <input type="file" name="publicidad_imagen" id="publicidad_imagen" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
-                        <div class="help-block with-errors"></div>
-                        <?php if ($this->content->publicidad_imagen) { ?>
-                            <div id="imagen_publicidad_imagen">
-                                <img src="/images/<?= $this->content->publicidad_imagen; ?>" class="img-thumbnail thumbnail-administrator" />
-                                <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagen','<?php echo $this->route . "/deleteimage";
-                                                                                                                                        ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
-                            </div>
-                        <?php } ?>
-                    </div>
-                    <div class="col-3 form-group">
-                        <label for="publicidad_imagenresponsive	">Imagen Responsive</label>
-                        <input type="file" name="publicidad_imagenresponsive" id="publicidad_imagenresponsive" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
-                        <div class="help-block with-errors"></div>
-                        <?php if ($this->content->publicidad_imagenresponsive) { ?>
-                            <div id="imagen_publicidad_imagenresponsive">
-                                <img src="/images/<?= $this->content->publicidad_imagenresponsive; ?>" class="img-thumbnail thumbnail-administrator" />
-                                <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagenresponsive','<?php echo $this->route . "/deleteimage";
-                                                                                                                                                ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
-                            </div>
-                        <?php } ?>
-                    </div>
+                    </div> -->
 
-                    <div class="col-3 form-group">
-                        <label for="publicidad_color_fondo" class="control-label">Color Fondo</label>
-                        <label class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text input-icono  fondo-morado "><i class="fas fa-pencil-alt"></i></span>
-                            </div>
-                            <input type="text" value="<?= $this->content->publicidad_color_fondo; ?>" name="publicidad_color_fondo" id="publicidad_color_fondo" class="form-control colorpicker">
-                        </label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="col-3 form-group">
-                        <label class="control-label">Estado</label>
-                        <label class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text input-icono  fondo-azul-claro "><i class="far fa-list-alt"></i></span>
-                            </div>
-                            <select class="form-control" name="publicidad_estado" required>
-                                <?php foreach ($this->list_publicidad_estado as $key => $value) { ?>
-                                    <option <?php if ($this->getObjectVariable($this->content, "publicidad_estado") == $key) {
-                                                echo "selected";
-                                            } ?> value="
+                <div class="col-3 form-group">
+                    <label for="publicidad_imagen">Imagen</label>
+                    <input type="file" name="publicidad_imagen" id="publicidad_imagen" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
+                    <div class="help-block with-errors"></div>
+                    <?php if ($this->content->publicidad_imagen) { ?>
+                        <div id="imagen_publicidad_imagen">
+                            <img src="/images/<?= $this->content->publicidad_imagen; ?>" class="img-thumbnail thumbnail-administrator" />
+                            <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagen','<?php echo $this->route . "/deleteimage";
+                                                                                                                                    ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="col-3 form-group">
+                    <label for="publicidad_imagenresponsive	">Imagen Responsive</label>
+                    <input type="file" name="publicidad_imagenresponsive" id="publicidad_imagenresponsive" class="form-control  file-image" data-buttonName="btn-primary" accept="image/gif, image/jpg, image/jpeg, image/png">
+                    <div class="help-block with-errors"></div>
+                    <?php if ($this->content->publicidad_imagenresponsive) { ?>
+                        <div id="imagen_publicidad_imagenresponsive">
+                            <img src="/images/<?= $this->content->publicidad_imagenresponsive; ?>" class="img-thumbnail thumbnail-administrator" />
+                            <div><button class="btn btn-danger btn-sm" type="button" onclick="eliminarImagen('publicidad_imagenresponsive','<?php echo $this->route . "/deleteimage";
+                                                                                                                                            ?>')"><i class="glyphicon glyphicon-remove"></i> Eliminar Imagen</button></div>
+                        </div>
+                    <?php } ?>
+                </div>
+
+                <div class="col-3 form-group">
+                    <label for="publicidad_color_fondo" class="control-label">Color Fondo</label>
+                    <label class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text input-icono  fondo-morado "><i class="fas fa-pencil-alt"></i></span>
+                        </div>
+                        <input type="text" value="<?= $this->content->publicidad_color_fondo; ?>" name="publicidad_color_fondo" id="publicidad_color_fondo" class="form-control colorpicker">
+                    </label>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="col-3 form-group">
+                    <label class="control-label">Estado</label>
+                    <label class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text input-icono  fondo-azul-claro "><i class="far fa-list-alt"></i></span>
+                        </div>
+                        <select class="form-control" name="publicidad_estado" required>
+                            <?php foreach ($this->list_publicidad_estado as $key => $value) { ?>
+                                <option <?php if ($this->getObjectVariable($this->content, "publicidad_estado") == $key) {
+                                            echo "selected";
+                                        } ?> value="
                                 <?php echo $key; ?>" />
-                                    <?= $value; ?>
-                                    </option>
-                                <?php } ?>
-                            </select>
-                        </label>
-                        <div class="help-block with-errors"></div>
-                    </div>
-                <?php } ?>
+                                <?= $value; ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </label>
+                    <div class="help-block with-errors"></div>
+                </div>
+
+
                 <div class="col-12 form-group">
                     <label for="publicidad_descripcion" class="form-label">Descripción</label>
                     <textarea name="publicidad_descripcion" id="publicidad_descripcion" class="form-control tinyeditor" rows="10"><?= $this->content->publicidad_descripcion; ?></textarea>

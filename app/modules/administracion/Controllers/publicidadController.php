@@ -292,6 +292,11 @@ class Administracion_publicidadController extends Administracion_mainController
     }
     $data['publicidad_texto_enlace'] = $this->_getSanitizedParam("publicidad_texto_enlace");
     $data['publicidad_enlace_alineacion'] = $this->_getSanitizedParam("publicidad_enlace_alineacion");
+    if ($this->_getSanitizedParam("mostrarinfo") == '') {
+      $data['mostrarinfo'] = '0';
+    } else {
+      $data['mostrarinfo'] = $this->_getSanitizedParam("mostrarinfo");
+    }
     return $data;
   }
 
@@ -320,15 +325,22 @@ class Administracion_publicidadController extends Administracion_mainController
    *
    * @return array cadena con los valores del campo Posicion.
    */
-  private function getPublicidadposicion()
+/*   private function getPublicidadposicion()
   {
     $array = array();
     $array['align-items-center'] = 'Centro';
     $array['align-items-start'] = 'Superior';
     $array['align-items-end'] = 'Inferior';
     return $array;
-  }
+  } */
+  private function getPublicidadposicion()
+  {
+    $array = array();
+    $array['d-flex'] = 'Horizontal';
+    $array['d-grid'] = 'Vertical';
 
+    return $array;
+  }
 
   /**
    * Genera los valores del campo Estado.

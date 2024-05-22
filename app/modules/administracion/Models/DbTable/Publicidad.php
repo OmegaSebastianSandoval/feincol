@@ -36,7 +36,9 @@ class Administracion_Model_DbTable_Publicidad extends Db_Table
 		$publicidad_enlace = $data['publicidad_enlace'];
 		$publicidad_tipo_enlace = $data['publicidad_tipo_enlace'];
 		$publicidad_texto_enlace = $data['publicidad_texto_enlace'];
-		$query = "INSERT INTO publicidad( publicidad_seccion, publicidad_nombre, publicidad_fecha, publicidad_imagen, publicidad_imagenresponsive, publicidad_video, publicidad_color_fondo, publicidad_posicion, publicidad_descripcion, publicidad_estado, publicidad_click, publicidad_enlace, publicidad_tipo_enlace, publicidad_texto_enlace) VALUES ( '$publicidad_seccion', '$publicidad_nombre', '$publicidad_fecha', '$publicidad_imagen', '$publicidad_imagenresponsive', '$publicidad_video', '$publicidad_color_fondo', '$publicidad_posicion', '$publicidad_descripcion', '$publicidad_estado', '$publicidad_click', '$publicidad_enlace', '$publicidad_tipo_enlace', '$publicidad_texto_enlace')";
+		$mostrarinfo = $data['mostrarinfo'];
+
+		$query = "INSERT INTO publicidad( publicidad_seccion, publicidad_nombre, publicidad_fecha, publicidad_imagen, publicidad_imagenresponsive, publicidad_video, publicidad_color_fondo, publicidad_posicion, publicidad_descripcion, publicidad_estado, publicidad_click, publicidad_enlace, publicidad_tipo_enlace, publicidad_texto_enlace, mostrarinfo) VALUES ( '$publicidad_seccion', '$publicidad_nombre', '$publicidad_fecha', '$publicidad_imagen', '$publicidad_imagenresponsive', '$publicidad_video', '$publicidad_color_fondo', '$publicidad_posicion', '$publicidad_descripcion', '$publicidad_estado', '$publicidad_click', '$publicidad_enlace', '$publicidad_tipo_enlace', '$publicidad_texto_enlace', '$mostrarinfo')";
 		$res = $this->_conn->query($query);
         return mysqli_insert_id($this->_conn->getConnection());
 	}
@@ -63,7 +65,9 @@ class Administracion_Model_DbTable_Publicidad extends Db_Table
 		$publicidad_enlace = $data['publicidad_enlace'];
 		$publicidad_tipo_enlace = $data['publicidad_tipo_enlace'];
 		$publicidad_texto_enlace = $data['publicidad_texto_enlace'];
-		echo $query = "UPDATE publicidad SET  publicidad_seccion = '$publicidad_seccion', publicidad_nombre = '$publicidad_nombre', publicidad_fecha = '$publicidad_fecha', publicidad_imagen = '$publicidad_imagen', publicidad_imagenresponsive = '$publicidad_imagenresponsive', publicidad_video = '$publicidad_video', publicidad_color_fondo = '$publicidad_color_fondo', publicidad_posicion = '$publicidad_posicion', publicidad_descripcion = '$publicidad_descripcion', publicidad_estado = '$publicidad_estado', publicidad_click = '$publicidad_click', publicidad_enlace = '$publicidad_enlace', publicidad_tipo_enlace = '$publicidad_tipo_enlace', publicidad_texto_enlace = '$publicidad_texto_enlace' WHERE publicidad_id = '".$id."'";
+		$mostrarinfo = $data['mostrarinfo'];
+
+		$query = "UPDATE publicidad SET  publicidad_seccion = '$publicidad_seccion', publicidad_nombre = '$publicidad_nombre', publicidad_fecha = '$publicidad_fecha', publicidad_imagen = '$publicidad_imagen', publicidad_imagenresponsive = '$publicidad_imagenresponsive', publicidad_video = '$publicidad_video', publicidad_color_fondo = '$publicidad_color_fondo', publicidad_posicion = '$publicidad_posicion', publicidad_descripcion = '$publicidad_descripcion', publicidad_estado = '$publicidad_estado', publicidad_click = '$publicidad_click', publicidad_enlace = '$publicidad_enlace', publicidad_tipo_enlace = '$publicidad_tipo_enlace', publicidad_texto_enlace = '$publicidad_texto_enlace', mostrarinfo = '$mostrarinfo' WHERE publicidad_id = '".$id."'";
 		$res = $this->_conn->query($query);
 	}
 }

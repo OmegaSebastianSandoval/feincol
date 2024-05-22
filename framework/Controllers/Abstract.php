@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 abstract class Controllers_Abstract
 {
-	protected $_response;
+    protected $_response;
     protected $_request;
     protected $_routes;
     protected $_view;
@@ -21,16 +21,15 @@ abstract class Controllers_Abstract
         $controller = $this->getRoutes()->getController();
         $view = $this->getRoutes()->getAction();
         $csrf = $this->_getSanitizedParam("csrf");
-        if ($this->_getSanitizedParam("csrf") == '' ) {
+        if ($this->_getSanitizedParam("csrf") == '') {
             $this->_csrf = new Core_Model_Csrf($this->_csrf_section);
         }
-        $this->_viewFilename = APP_PATH.'/modules/'.$module.'/Views/'.$controller.'/'.$view.'.php';
+        $this->_viewFilename = APP_PATH . '/modules/' . $module . '/Views/' . $controller . '/' . $view . '.php';
         $this->_view = new View();
         $this->init();
     }
     public function init()
     {
-
     }
 
     protected function _getSanitizedParam($name, $value = null)
@@ -47,6 +46,9 @@ abstract class Controllers_Abstract
     protected function _getSanitizedParamHtml($name, $value = null)
     {
         $currentValue = $this->getRequest()->_getParam($name, $value);
+        // Eliminar el texto no deseado
+        $currentValue = str_replace('<script src="//cdn.public.flmngr.com/FLMNFLMN/widgets.js"></script>', '', $currentValue);
+
         $currentValue = addslashes($currentValue);
         $currentValue = trim($currentValue);
         return $currentValue;
@@ -75,7 +77,7 @@ abstract class Controllers_Abstract
     public function getRoutes()
     {
         return $this->_routes;
-    } 
+    }
 
     public function setResponse($res)
     {
@@ -94,14 +96,14 @@ abstract class Controllers_Abstract
 
     public function render()
     {
-       
-        if (null != $this->_layout) { 
+
+        if (null != $this->_layout) {
             $this->_layout->setView($this->_view);
             return $this->_layout->render($this->_viewFilename);
         }
         return $this->_view->render($this->_viewFilename);
     }
-    
+
     public function setLayout($layoutName)
     {
         $this->_layout = new Layout($layoutName);
@@ -109,7 +111,6 @@ abstract class Controllers_Abstract
 
     public function getLayout()
     {
-        return $this->_layout ;
+        return $this->_layout;
     }
-
 }

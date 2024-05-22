@@ -16,6 +16,7 @@ class Page_mainController extends Controllers_Abstract
 		$infopageModel = new Page_Model_DbTable_Informacion();
 		$contenidoModel = new Page_Model_DbTable_Contenido();
 		$this->_view->contenidoHeader = $contenidoModel->getById(1);
+		$this->_view->enlacesFooter = $this->template->getContentseccion(3);
 
 		$informacion = $infopageModel->getById(1);
 		$this->_view->infopage = $informacion;
@@ -29,6 +30,8 @@ class Page_mainController extends Controllers_Abstract
 		$this->getLayout()->setData("header",$header);
 		$enlaceModel = new Page_Model_DbTable_Enlace();
 		$this->_view->enlaces = $enlaceModel->getList("","orden ASC");
+	
+		
 		$footer = $this->_view->getRoutPHP('modules/page/Views/partials/footer.php');
 		$this->getLayout()->setData("footer",$footer);
 		$adicionales = $this->_view->getRoutPHP('modules/page/Views/partials/adicionales.php');

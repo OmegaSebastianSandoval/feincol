@@ -37,7 +37,7 @@
     </div>
 </div>
 <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+    <div class="container">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,9 +47,12 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                 </li>
+                <div class="vr"></div>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Nuestro Fondo</a>
                 </li>
+                <div class="vr"></div>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Portafolio
@@ -63,78 +66,86 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
+                <div class="vr"></div>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Felicidad</a>
                 </li>
+                <div class="vr"></div>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Afíliate</a>
                 </li>
+                <div class="vr"></div>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Escríbenos</a>
                 </li>
-                <li class="nav-item">
+                <div class="vr"></div>
+
+               <!--  <li class="nav-item">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                </li>
+                </li> -->
 
 
-                <li class="nav-item">
-                <?php if ($this->infopage->info_pagina_youtube) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_youtube ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-youtube"></i>
-                            </a>
+                <li class="nav-item links-redes border-0">
+                    <?php if ($this->infopage->info_pagina_youtube) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_youtube ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
 
-                        <?php } ?>
-                        <?php if ($this->infopage->info_pagina_facebook) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_facebook ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-
-
-                        <?php } ?>
-
-                        <?php if ($this->infopage->info_pagina_twitter) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_twitter ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a>
+                    <?php } ?>
+                    <?php if ($this->infopage->info_pagina_facebook) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_facebook ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
 
 
-                        <?php } ?>
-                        <?php if ($this->infopage->info_pagina_linkedin) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_linkedin ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
+                    <?php } ?>
+
+                    <?php if ($this->infopage->info_pagina_twitter) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_twitter ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
 
 
-                        <?php } ?>
-                        <?php if ($this->infopage->info_pagina_instagram) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_instagram ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
+                    <?php } ?>
+                    <?php if ($this->infopage->info_pagina_linkedin) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_linkedin ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
 
 
-                        <?php } ?>
-                        <?php if ($this->infopage->info_pagina_pinterest) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_pinterest ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-pinterest-p"></i>
-                            </a>
+                    <?php } ?>
+                    <?php if ($this->infopage->info_pagina_instagram) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_instagram ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
 
 
-                        <?php } ?>
+                    <?php } ?>
+                    <?php if ($this->infopage->info_pagina_pinterest) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_pinterest ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
 
-                        <?php if ($this->infopage->info_pagina_flickr) { ?>
-                            <a href="<?php echo $this->infopage->info_pagina_flickr ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
-                                <i class="fa-brands fa-flickr"></i>
-                            </a>
+
+                    <?php } ?>
+
+                    <?php if ($this->infopage->info_pagina_flickr) { ?>
+                        <a href="<?php echo $this->infopage->info_pagina_flickr ?>" target="_blank" style="color:<?php echo $this->partials->partials_color_iconos ?>">
+                            <i class="fa-brands fa-flickr"></i>
+                        </a>
 
 
-                        <?php } ?>
+                    <?php } ?>
                 </li>
 
             </ul>
-           
+
         </div>
     </div>
 </nav>
