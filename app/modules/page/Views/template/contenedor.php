@@ -6,5 +6,7 @@
 		<?php include(APP_PATH . "modules/page/Views/template/seccion.php"); ?>
 	<?php } else if ($contenedor->contenido_tipo == 15) { ?>
 		<?php include(APP_PATH . "modules/page/Views/template/documentos.php"); ?>
+	<?php } else if ($contenedor->contenido_tipo == 22) { ?>
+		<?php include(APP_PATH . "modules/page/Views/template/formulario.php"); ?>
 	<?php } ?>
 <?php endforeach ?>

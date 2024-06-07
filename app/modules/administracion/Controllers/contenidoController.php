@@ -441,6 +441,8 @@ class Administracion_contenidoController extends Administracion_mainController
       $array['1'] = 'Banner';
       $array['2'] = 'Contenedor';
       $array['15'] = 'Contenedor documentos';
+      $array['22'] = 'Formulario';
+
 
     } else if ($padre->contenido_tipo == 1) {
       $array['4'] = 'Banner';

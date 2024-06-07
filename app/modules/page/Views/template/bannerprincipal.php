@@ -27,7 +27,7 @@
             </div>
           <?php } else { ?>
 
-            <div class="fondo-imagen d-none d-sm-flex justify-content-end align-items-center">
+            <div class="fondo-imagen d-none d-lg-flex justify-content-end align-items-center">
 
               <?php if ($banner->mostrarinfo != 1 && $banner->publicidad_enlace) { ?>
                 <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="w-100">
@@ -45,6 +45,7 @@
                 <div class="contenido-banner">
 
                   <h4>
+                
                     <?php echo resaltarTexto($banner->publicidad_nombre);  ?>
                   </h4>
                   <?php echo $banner->publicidad_descripcion; ?>
@@ -59,7 +60,7 @@
               <?php } ?>
             </div>
 
-            <div class="fondo-imagen-responsive d-sm-none d-flex justify-content-center align-items-center">
+            <div class="fondo-imagen-responsive d-lg-none d-flex justify-content-center align-items-center">
               <?php if ($banner->mostrarinfo != 1 && $banner->publicidad_enlace) { ?>
                 <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="w-100">
 
@@ -70,7 +71,7 @@
                 </a>
               <?php } ?>
 
-              <?php if ($banner->mostrarinfo == 1) { ?>
+              <!-- <?php if ($banner->mostrarinfo == 1) { ?>
 
                 <div class="contenido-banner">
 
@@ -86,7 +87,7 @@
                   <?php } ?>
 
                 </div>
-              <?php } ?>
+              <?php } ?> -->
             </div>
 
           <?php } ?>

@@ -30,7 +30,10 @@
 							<select class="form-control" name="contenido_seccion" id="contenido_seccion" required  >
 								<option value="">Seleccione...</option>
 								<?php foreach ($this->list_contenido_seccion AS $key => $value ){?>
-									<option <?php if($this->getObjectVariable($this->content,"contenido_seccion") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
+									<option  <?php if($this->getObjectVariable($this->content,"contenido_seccion") == $key ){ echo "selected"; }?> 
+									
+									 	
+									value="<?php echo $key; ?>" /> <?= $value; ?></option>
 								<?php } ?>
 							</select>
 						</label>
@@ -51,7 +54,9 @@
 							<select class="form-control" name="contenido_tipo" id="contenido_tipo" required  onchange="aparecercolumna();">
 								<option value="">Seleccione...</option>
 								<?php foreach ($this->list_contenido_tipo AS $key => $value ){?>
-									<option <?php if($this->getObjectVariable($this->content,"contenido_tipo") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
+									<option <?php if($this->getObjectVariable($this->content,"contenido_tipo") == $key ){ echo "selected"; }?> 
+									<?php if($key == 22 ){ echo "disabled"; }?>
+									value="<?php echo $key; ?>" /> <?= $value; ?></option>
 								<?php } ?>
 							</select>
 						</label>
