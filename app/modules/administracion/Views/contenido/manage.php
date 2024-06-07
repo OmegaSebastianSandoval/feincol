@@ -278,7 +278,7 @@
 				</label>
 				<div class="help-block with-errors"></div>
 			</div>
-			<div class="col-4 form-group no-contenido no-banner si-seccion no-acordion si-carrousel si-contenido2" <?php if($tipo != 2 && $tipo!= 4 && $tipo!= 5  && $tipo!= 6 ){ ?> style="display: none;" <?php } ?> >
+			<div class="col-4 form-group no-contenido no-banner si-seccion no-acordion si-carrousel si-contenido2" <?php if($tipo != 2 && $tipo!= 4 && $tipo!= 5  && $tipo!= 6  && $tipo!= 22 ){ ?> style="display: none;" <?php } ?> >
 				<label for="contenido_fondo_color"  class="control-label"><?php if($tipo == 4){ ?> Color Caption <?php } else{ ?> Color Fondo <?php } ?></label>
 				<label class="input-group">
 					<div class="input-group-prepend">

@@ -292,7 +292,13 @@ $(document).ready(function () {
       $(".no-acordion").hide();
       $(".no-carrousel").hide();
       $(".si-acordion").show();
-    }
+    }else if (parseInt(value) == 22) {
+      //Si es un Contenedor
+      $(".no-seccion").hide();
+      $(".no-banner").hide();
+      $(".no-contenido").hide();
+      $(".si-seccion").show();
+    } 
   });
   $(".colorpicker").colorpicker({
     onChange: function (e) {

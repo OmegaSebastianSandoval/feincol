@@ -81,3 +81,53 @@ document.addEventListener("scroll", () => {
     // Retrasa la eliminación de la clase 'released' para permitir la transición
   }
 });
+document.addEventListener("DOMContentLoaded",()=>{
+  
+document.getElementById("formulario-contacto").addEventListener("submit", function(e) {
+  e.preventDefault();
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    Swal.fire({
+      icon: "warning",
+      text: "Por favor, verifica que no eres un robot.",
+    });
+  } else {
+    let formData = new FormData(this);
+    let data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    console.log(data);
+
+    fetch(this.getAttribute("action"), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === "success") {
+        Swal.fire({
+          icon: "success",
+          text: "Hemos recibido tu mensaje, te responderemos a la brevedad.",
+        });
+      } else if (data.status === "error") {
+        Swal.fire({
+          icon: "error",
+          text: "Ha ocurrido un error, por favor intenta de nuevo.",
+        });
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: "error",
+        text: "Ha ocurrido un error, por favor intenta de nuevo.",
+      });
+    });
+  }
+})
+
+})

@@ -345,9 +345,30 @@ body {
 
 .btn-amarillo:hover {
   border: 2px solid var(--azul-oscuro);
+}
 
+.btn-azul {
+  background: var(--azul) !important;
+  color: #FFF !important;
+  /* border: 3px solid var(--amarillo); */
+  border: none;
+  border-radius: 10px;
 
+  align-items: center;
+  padding: 7px 40px;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  margin-top: auto;
+  gap: 10px;
+}
 
+.btn-azul:hover {
+  background: var(--azul-medio) !important;
+  color: #FFF;
 }
 
 
@@ -810,8 +831,59 @@ footer .btn-primary {
 }
 
 /*++++++++++++++++++++++++++++++++
- HOME INICIO SLIDER NUESTROS ALIADOS
+ HOME FIN SLIDER NUESTROS ALIADOS
  ++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++
+ HOME INICIO FORMULARIO
+ ++++++++++++++++++++++++++++++++++++++++ */
+ h2.titulo-formulario{
+  color: var(--amarillo);
+  text-align: start;
+  font-size: calc(2rem + .9vw);
+}
+
+.descripcion-formulario p{
+  color: var(--blanco);
+  font-weight: 800;
+  font-size: 19px;
+  font-family: 'TitilliumWeb Bold';
+
+}
+.input-field{
+  background: var(--blanco);
+  outline: none;
+  border: 1px solid rgba(255, 0, 0, 0);
+  border-radius: 0.5rem;
+  padding: 10px;
+  margin: 10px auto;
+  width: 100%;
+  display: block;
+  color: #425981;
+  font-weight: 500;
+  font-size: 1.1em;
+  box-shadow: inset 4px 4px 4px rgba(165, 163, 163, 0.315), 4px 4px 4px rgba(218, 218, 218, 0.13);
+}
+textarea.input-field{
+  height: 117px !important;
+}
+.form-check-label{
+  color: var(--blanco);
+}
+
+
+ /*++++++++++++++++++++++++++++++++
+ HOME FIN FORMULARIO
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
 
 
 
