@@ -1,14 +1,11 @@
 <?php
 
-/**
- *
- */
-
-class Page_indexController extends Page_mainController
+class Page_felicitacionesController extends Page_mainController
 {
 
-  protected $_csrf_section = "omega_index";
-  public $botonactivo  = 1;
+  protected $_csrf_section = "omega_contacto";
+  public $botonactivo  = 6;
+
 
 
   public function init()
@@ -27,7 +24,6 @@ class Page_indexController extends Page_mainController
     parent::init();
   }
 
-
   public function indexAction()
   {
     $this->_csrf_section = "omega_index" . date("YmdHis");
@@ -35,15 +31,8 @@ class Page_indexController extends Page_mainController
     $this->_view->csrf_section = $this->_csrf_section;
     $this->_view->csrf = Session::getInstance()->get('csrf')[$this->_csrf_section];
 
-
-
-
-    $this->_view->banner = $this->template->bannerPrincipal(1);
-
-    $this->_view->contenido = $this->template->getContentseccion(1);
-
-	
-
+    $this->_view->banner = $this->template->banner(6);
+    $this->_view->contenido = $this->template->getContentseccion(6);
   }
 
 
@@ -71,10 +60,17 @@ class Page_indexController extends Page_mainController
     $correo = $this->sanitizarEntrada($data['correo']);
 
     $email = $this->sanitizarEntrada($data['email']);
+    $tipo = $this->sanitizarEntrada($data['tipo']);
+
 
 
     $asunto = $this->sanitizarEntrada($data['asunto']);
     $mensaje = $this->sanitizarEntrada($data['mensaje']);
+    $telefono = $this->sanitizarEntrada($data['telefono']);
+    $empresa = $this->sanitizarEntrada($data['empresa']);
+
+
+
     $g_recaptcha_response = $this->sanitizarEntrada($data['g-recaptcha-response']);
     $hash = $this->sanitizarEntrada($data['hash']);
     $csrf = $this->sanitizarEntrada($data['csrf']);
@@ -85,6 +81,10 @@ class Page_indexController extends Page_mainController
     $data2["correo"] = $correo;
     $data2["asunto"] = $asunto;
     $data2["mensaje"] = $mensaje;
+    $data2["tipo"] = $tipo;
+    $data2["telefono"] = $telefono;
+    $data2["empresa"] = $empresa;
+
 
 
     if (Session::getInstance()->get('csrf')[$csrf_section] != $csrf) {
@@ -114,7 +114,7 @@ class Page_indexController extends Page_mainController
 
 
     if ($email == "") {
-      if ($nombre != "" and $correo != "" and $asunto != ""  and $mensaje != "") {
+      if ($nombre != "" and $correo != "" and $tipo != ""  and $mensaje != "" and $empresa != "") {
         if (
           strpos($asunto, "@") === false &&
           strpos($nombre, "@") === false &&
@@ -141,7 +141,7 @@ class Page_indexController extends Page_mainController
         ) {
           // No hay ning煤n enlace, script, ' o / o \ en $mensaje
           $mail = new Core_Model_Sendingemail($this->_view);
-          $mail_response = $mail->sendMailContact($data2);
+          $mail_response = $mail->sendMailFelicitaciones($data2);
         } else {
           $res['error'] = "Error de validación";
         }

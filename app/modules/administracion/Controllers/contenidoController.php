@@ -423,6 +423,15 @@ class Administracion_contenidoController extends Administracion_mainController
     $array['2'] = 'Header';
     $array['3'] = 'Enlaces extra';
     $array['4'] = 'Afíliate';
+    $array['5'] = 'Directorio';
+    $array['6'] = 'Felicitaciones';
+    $array['7'] = 'Beneficios Sociales';
+    $array['8'] = '¿Quienes Somos?';
+    $array['9'] = 'Organigrama';
+    $array['10'] = 'Nuestra historia';
+    $array['11'] = 'Normatividad';
+
+
 
 
     return $array;

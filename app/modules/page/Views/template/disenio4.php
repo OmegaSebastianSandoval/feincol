@@ -1,4 +1,4 @@
-<div class="caja-contenido-simple p-0 design-four four-<?php echo $contenido->contenido_id ?>" style="background-color: <?php if ($contenido->contenido_fondo_color) {
+<div class="caja-contenido-simple p-0 design-four contenido-animado four-<?php echo $contenido->contenido_id ?>" style="background-color: <?php if ($contenido->contenido_fondo_color) {
 																															echo  $contenido->contenido_fondo_color;
 																														} else if ($colorfondo) {
 																															echo $colorfondo;
@@ -18,7 +18,7 @@
 		<h2><?php echo $contenido->contenido_titulo; ?></h2>
 	<?php } ?>
 
-	<div>
+	<div class="contenido">
 		<div class="descripcion" style="<?php if ($contenido->contenido_borde == '1') {
 											echo 'padding: 10px; ';
 										} ?>">

@@ -1,10 +1,11 @@
 <div class="container">
     <div class="row p-1 p-md-4 d-flex justify-content-between">
         <div class="col-12 col-md-6">
-            
+
             <?php echo $this->contenidoHeader->contenido_descripcion ?>
             <div class="d-flex justify-content-between align-items-center g-4">
-                <img src="/corte/Logo-Header.png" class="logo-header" alt="Logo de FEINCOL">
+                <a href="/"> <img src="/corte/Logo-Header.png" class="logo-header" alt="Logo de FEINCOL">
+                </a>
                 <a href="#" class="btn-azul-oscuro d-none d-md-flex">
                     <img src="/corte/UbicacionHeader.png" alt="Imagen de contacto">
                     Zona Privada</a>
@@ -36,6 +37,17 @@
 
     </div>
 </div>
+
+<?php
+
+
+$isActivePortafolio = in_array($this->botonactivo, $this->isActivePortafolio);
+$isActiveEscribenos = in_array($this->botonactivo, $this->isActiveEscribenos);
+$isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
+
+
+?>
+
 <nav class="navbar navbar-expand-lg">
     <div class="container">
 
@@ -44,22 +56,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php echo $isActiveInicio ? 'active' : '' ?>" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Inicio
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 11 ? 'active' : '' ?>" href="/page/quienessomos">¿Quienes somos?</a></li>
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 12 ? 'active' : '' ?>" href="/page/organigrama">Organigrama</a></li>
+
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 13 ? 'active' : '' ?>" href="/page/nuestrahisotria">Nuestra historia</a></li>
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 14 ? 'active' : '' ?>" href="/page/normatividad">Normatividad</a></li>
+                    </ul>
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Nuestro Fondo</a>
+                    <a class="nav-link <?php echo $this->botonactivo == 2 ? 'active' : '' ?>" href="#">Nuestro Fondo</a>
                 </li>
                 <div class="vr"></div>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle <?php echo $isActivePortafolio ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Portafolio
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 8 ? 'active' : '' ?>" href="/page/beneficios">Beneficios sociales</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -69,24 +91,24 @@
                 <div class="vr"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Felicidad</a>
+                    <a class="nav-link <?php echo $this->botonactivo == 4 ? 'active' : '' ?>" href="#">Felicidad</a>
                 </li>
                 <div class="vr"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" download href="/files/<?php echo $this->contenidoafiliate->contenido_archivo?>">Afíliate</a>
+                    <a class="nav-link <?php echo $this->botonactivo == 5 ? 'active' : '' ?>" target="_blank" download href="/files/<?php echo $this->contenidoafiliate->contenido_archivo ?>">Afíliate</a>
                 </li>
                 <div class="vr"></div>
 
-               
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Escríbenos
+                    <a class="nav-link dropdown-toggle <?php echo $isActiveEscribenos ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Escríbenos
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Felicitaciones</a></li>
-                        <li><a class="dropdown-item" href="#">Directorio</a></li>
-                        
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 6 ? 'active' : '' ?>" href="/page/felicitaciones">Felicitaciones</a></li>
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 7 ? 'active' : '' ?>" href="/page/directorio">Directorio</a></li>
+
                         <li><a class="dropdown-item" href="#">Formulario de contacto</a></li>
                     </ul>
                 </li>
@@ -160,4 +182,3 @@
         </div>
     </div>
 </nav>
-

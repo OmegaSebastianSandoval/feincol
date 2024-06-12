@@ -315,6 +315,18 @@ class Administracion_publicidadController extends Administracion_mainController
 
     // HOME
     $array['1'] = 'Banners Home';
+    $array['5'] = 'Directorio';
+    $array['6'] = 'Felicitaciones';
+    $array['7'] = 'Beneficios Sociales';
+    $array['8'] = '¿Quienes Somos?';
+    $array['9'] = 'Organigrama';
+    $array['10'] = 'Nuestra historia';
+    $array['11'] = 'Normatividad';
+
+
+
+
+
 
     return $array;
   }
@@ -325,7 +337,7 @@ class Administracion_publicidadController extends Administracion_mainController
    *
    * @return array cadena con los valores del campo Posicion.
    */
-/*   private function getPublicidadposicion()
+  /*   private function getPublicidadposicion()
   {
     $array = array();
     $array['align-items-center'] = 'Centro';

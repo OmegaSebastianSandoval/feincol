@@ -12,6 +12,9 @@ class Page_mainController extends Controllers_Abstract
 	public function init()
 	{
 		$this->setLayout('page_page');
+		$this->_view->botonactivo = $this->botonactivo;
+
+
 		$this->template = new Page_Model_Template_Template($this->_view);
 		$infopageModel = new Page_Model_DbTable_Informacion();
 		$contenidoModel = new Page_Model_DbTable_Contenido();
@@ -19,7 +22,18 @@ class Page_mainController extends Controllers_Abstract
 
 		$this->_view->contenidoafiliate = $contenidoModel->getById(29);
 
+
 		$this->_view->enlacesFooter = $this->template->getContentseccion(3);
+
+		$this->_view->isActivePortafolio = $this->isActivePortafolio();
+		$this->_view->isActiveEscribenos = $this->isActiveEscribenos();
+		$this->_view->isActiveInicio = $this->isActiveInicio();
+
+
+		$modalModel = new Page_Model_DbTable_Publicidad();
+		$this->_view->popup = $modalModel->getList("publicidad_seccion='101' AND publicidad_estado=1", "")[0];
+		
+
 
 		$informacion = $infopageModel->getById(1);
 		$this->_view->infopage = $informacion;
@@ -50,5 +64,20 @@ class Page_mainController extends Controllers_Abstract
 			$this->editarpage = 1;
 		}
 	}
+
+	public function isActivePortafolio() {
+        $activeButtons = [3, 8]; // Agrega todos los números que pueden activar el botón aquí
+        return $activeButtons ;
+    }
+
+	public function isActiveEscribenos() {
+        $activeButtons = [6, 7,9]; // Agrega todos los números que pueden activar el botón aquí
+        return $activeButtons ;
+    }
+	
+	public function isActiveInicio() {
+        $activeButtons = [1, 11,12, 13, 14]; // Agrega todos los números que pueden activar el botón aquí
+        return $activeButtons ;
+    }
 
 } 

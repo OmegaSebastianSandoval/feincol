@@ -114,3 +114,34 @@ function replaceBracketsWithSpan(string $text): string {
         </div>
     </div>
 </div>
+
+
+<?php if ($this->popup->publicidad_estado == 1) { ?>
+    <div class="modal fade" id="popup" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style=" border: none;
+    background-color: transparent;">
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+                <div class="modal-body">
+                    <?php if ($this->popup->publicidad_video != "") { ?>
+                        <div class="fondo-video-youtube">
+                            <div class="banner-video-youtube" id="videobanner<?php echo $this->popup->publicidad_id; ?> " data-video="<?php echo $this->id_youtube($this->popup->publicidad_video); ?>"></div>
+                        </div>
+                    <?php } ?>
+                    <?php if ($this->popup->publicidad_imagen != "") { ?>
+                        <?php if ($this->popup->publicidad_enlace != "") { ?> <a href="<?php echo $this->popup->publicidad_enlace ?>" <?php if ($this->popup->publicidad_enlace == 1) {
+                                                                                                                                            echo "target='_blank'";
+                                                                                                                                        } ?>> <?php } ?><img class="w-100 img-fluid" src="/images/<?php echo $this->popup->publicidad_imagen ?>" alt="">
+                            <?php if ($this->popup->publicidad_enlace != "") { ?>
+                            </a>
+                        <?php } ?>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<?php } ?>
+

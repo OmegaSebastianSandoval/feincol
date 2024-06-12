@@ -150,9 +150,7 @@
 
 @font-face {
   font-family: 'TitilliumWeb Bold';
-  src: url('/skins/page/fonts/TitilliumWeb-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
+  src: url('/skins/page/fonts/TitilliumWeb-Bold.ttf');
 }
 
 @font-face {
@@ -178,9 +176,7 @@
 
 @font-face {
   font-family: 'TitilliumWeb SemiBold';
-  src: url('/skins/page/fonts/TitilliumWeb-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+  src: url('/skins/page/fonts/TitilliumWeb-SemiBold.ttf');
 }
 
 * {
@@ -192,7 +188,7 @@
   font-family: "TitilliumWeb", sans-serif;
   scroll-margin-top: 15rem;
   position: relative;
-   /* border: 1px solid red;  */
+  /* border: 1px solid red;  */
 }
 
 :root {
@@ -221,27 +217,30 @@ body {
   z-index: 2;
 }
 
-.contenedor-seccion h2{
+.contenedor-seccion h2,
+h2 {
   color: var(--azul-oscuro);
   text-align: center;
   font-weight: 900;
   font-family: 'TitilliumWeb Bold';
-  
+
 }
-.contenedor-seccion .descripcion-seccion p{
+
+.contenedor-seccion .descripcion-seccion p {
   font-size: 18px;
 }
-.contenedor-seccion .descripcion-seccion p::after{
+
+.contenedor-seccion .descripcion-seccion p::after {
   content: "";
   display: block;
   width: 6em;
   max-width: 70%;
   border-bottom: 2px solid var(--azul);
 
- 
+
   height: 5px;
   padding: 5px 0;
-  margin: 10px auto ;
+  margin: 10px auto;
   margin-bottom: 30px;
 }
 
@@ -395,7 +394,18 @@ body {
   font-size: 40px;
   font-weight: bold;
   color: var(--azul-oscuro);
+  line-height: 1;
 }
+
+@media (width < 1576px) {
+  .welcome-text {
+    font-size: 30px;
+
+  }
+
+}
+
+
 
 .highlight {
   color: var(--azul);
@@ -711,6 +721,22 @@ footer .btn-primary {
 /* -------------------
  BANNERS PRINCIPAL FIN
  -------------------- */
+
+
+
+/* -------------------
+ BANNERS INTERNAS INICIO
+ -------------------- */
+.slider-internas .contenido-banner h4 {
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+/* -------------------
+ BANNERS INTERNAS FIN
+ -------------------- */
+
+
 /* -------------------
  BANNERS INNTERNA INICIO
  -------------------- */
@@ -825,6 +851,7 @@ footer .btn-primary {
   filter: grayscale(1);
 
 }
+
 .id_15 .slider_16 .itemSlider img:hover {
   filter: grayscale(0);
   transform: scale(1.1);
@@ -842,20 +869,21 @@ footer .btn-primary {
 /*++++++++++++++++++++++++++++++++
  HOME INICIO FORMULARIO
  ++++++++++++++++++++++++++++++++++++++++ */
- h2.titulo-formulario{
+h2.titulo-formulario {
   color: var(--amarillo);
   text-align: start;
   font-size: calc(2rem + .9vw);
 }
 
-.descripcion-formulario p{
+.descripcion-formulario p {
   color: var(--blanco);
   font-weight: 800;
   font-size: 19px;
   font-family: 'TitilliumWeb Bold';
 
 }
-.input-field{
+
+.input-field {
   background: var(--blanco);
   outline: none;
   border: 1px solid rgba(255, 0, 0, 0);
@@ -869,15 +897,24 @@ footer .btn-primary {
   font-size: 1.1em;
   box-shadow: inset 4px 4px 4px rgba(165, 163, 163, 0.315), 4px 4px 4px rgba(218, 218, 218, 0.13);
 }
-textarea.input-field{
-  height: 117px !important;
+
+.label-field {
+  display: block;
 }
-.form-check-label{
+
+/* .input-field:has(:focus:invalid){
+  border: 1px solid red;
+}
+textarea.input-field {
+  height: 117px !important;
+} */
+
+.form-check-label {
   color: var(--blanco);
 }
 
 
- /*++++++++++++++++++++++++++++++++
+/*++++++++++++++++++++++++++++++++
  HOME FIN FORMULARIO
  ++++++++++++++++++++++++++++++++++++++++ */
 
@@ -885,18 +922,19 @@ textarea.input-field{
 
 
 
-  /*++++++++++++++++++++++++++++++++
+/*++++++++++++++++++++++++++++++++
  HOME INICIO DIRECTORIO
  ++++++++++++++++++++++++++++++++++++++++ */
 
- .contenedor-seccion.id_27 {
+.contenedor-seccion.id_27 {
   background-size: cover;
 }
-.three-28 h2{
-color: var(--blanco);
+
+.three-28 h2 {
+  color: var(--blanco);
 }
 
-.three-28 .btn-vermas{
+.three-28 .btn-vermas {
   color: var(--blanco);
   font-weight: 500;
   border: 1px solid var(--blanco);
@@ -907,7 +945,7 @@ color: var(--blanco);
   margin-top: 25px;
 }
 
-.three-28 .btn-vermas:hover{
+.three-28 .btn-vermas:hover {
 
   border-color: rgb(228, 228, 228);
   box-shadow: rgba(218, 218, 218, 0.301) 0 4px 2px;
@@ -916,12 +954,242 @@ color: var(--blanco);
 
 }
 
-.text-yellow{
+.text-yellow {
   color: var(--amarillo);
 }
-  /*++++++++++++++++++++++++++++++++
+
+/*++++++++++++++++++++++++++++++++
  HOME FIN DIRECTORIO
  ++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++
+INICIO SECCION COMPLETA DIRECTORIO
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+.id_30 h2:first-of-type {
+  font-size: 2rem;
+}
+
+.id_30 .descripcion-seccion {
+  margin-bottom: 25px;
+}
+
+.id_30 .design-two h2 {
+  font-size: 1.3rem;
+  text-align: start;
+}
+
+.id_30 .design-two .col-sm-6:nth-child(2) {
+  padding: 0 51px 0 40px;
+}
+
+.id_30 .design-two .col-sm-6 img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+  max-height: 325px;
+  height: 100%;
+  /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
+
+
+}
+
+.id_30 .design-two .descripcion {
+  font-weight: 600;
+
+
+  text-align: start;
+  text-wrap: pretty;
+  /* display: grid;
+  place-items: center */
+}
+
+.id_30 .design-two {
+
+  margin-bottom: 25px;
+
+
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 100px;
+    scale: .5s;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+
+  }
+}
+
+/*++++++++++++++++++++++++++++++++
+ FIN  SECCION COMPLETA DIRECTORIO
+
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
+/*++++++++++++++++++++++++++++++++
+  INICIO FELICITACIONES
+
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+.id_35 .content-box {
+  display: grid;
+  justify-content: center;
+
+
+  animation: reveal2 linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+
+
+}
+
+.id_35 .introduccion-seccion {
+  max-width: 950px;
+}
+
+.id_35 .introduccion-seccion img {
+  width: 100%;
+  object-fit: contain;
+  height: auto;
+}
+
+.animado {
+
+  animation: reveal2 linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+
+@keyframes reveal2 {
+  from {
+    opacity: 0.5;
+    translate: 0 50px;
+    scale: .5s;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+
+  }
+}
+
+/*++++++++++++++++++++++++++++++++
+ FIN FELICITACIONES
+
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++
+  INICIO SEGURO SOCIAL
+
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+.id_37 .design-four .imagen-contenido img {
+  margin: auto;
+  display: block;
+  width: 65px;
+}
+
+.id_37 .design-four .imagen-contenido {
+  padding: 10px 0 10px 0;
+  position: relative;
+  width: 100%;
+  /* height: 200px; */
+  background-color: var(--azul-medio);
+  overflow: hidden;
+  border-radius: 0 0 50% 50% / 0 0 60% 60%;
+  /* top: -13px; */
+}
+
+.id_37 .design-four {
+  background: rgba(255, 255, 255, 1);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(212, 229, 253, 1) 96%, rgba(211, 228, 253, 1) 99%, rgba(255, 255, 255, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(96%, rgba(212, 229, 253, 1)), color-stop(99%, rgba(211, 228, 253, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(212, 229, 253, 1) 96%, rgba(211, 228, 253, 1) 99%, rgba(255, 255, 255, 1) 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(212, 229, 253, 1) 96%, rgba(211, 228, 253, 1) 99%, rgba(255, 255, 255, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(212, 229, 253, 1) 96%, rgba(211, 228, 253, 1) 99%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(212, 229, 253, 1) 96%, rgba(211, 228, 253, 1) 99%, rgba(255, 255, 255, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+  overflow: hidden;
+  border-radius: 15px;
+  height: 470px;
+  margin-bottom: 20px;
+
+}
+
+.id_37 .design-four .descripcion p {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  text-wrap: pretty;
+  color: var(--gris-oscuro);
+  padding: 0 15px;
+  /*  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; */
+  margin: 0 auto;
+  font-family: 'TitilliumWeb Bold';
+
+}
+
+.id_37 .design-four h2 {
+  text-align: center;
+  color: var(--azul-oscuro);
+  font-size: 26px;
+  font-weight: 600;
+  font-family: 'TitilliumWeb Bold';
+  margin-top: 20px;
+}
+
+.four-41,
+.four-42 {
+  height: 350px !important;
+}
+.contenido-animado{
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 40%;
+}
+/* .id_37 .design-four .contenido{
+  height: 72%;
+  display: grid;
+  place-items: center;
+} */
+/*++++++++++++++++++++++++++++++++
+  FIN SEGURO SOCIAL
+
+
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+
 
 
 

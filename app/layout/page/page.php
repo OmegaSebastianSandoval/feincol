@@ -45,6 +45,11 @@
   <!-- SweetAlert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+  <!-- Pollifyl -->
+
+<!-- <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script> -->
+
+
   <!-- Main Js -->
   <script src="/skins/page/js/main.js?v=2"></script>
 

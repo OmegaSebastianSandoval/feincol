@@ -35,18 +35,22 @@
     header .navbar-nav .dropdown-menu {
         position: absolute;
     }
-    header p:first-child{
 
-            line-height: 1;
+    header p:first-child {
+
+        line-height: 1;
         text-align: center;
     }
+
     .welcome-text {
         font-size: 25px;
 
     }
+
     .highlight {
         font-size: 18px;
     }
+
     /* -------------------
   HEADER FIN
   -------------------- */
@@ -79,11 +83,12 @@
         text-align: center !important;
     }
 
-    .id_2 .justify-content-start.text-left{
+    .id_2 .justify-content-start.text-left {
         justify-content: center !important;
     }
-    .footer-info{
-  
+
+    .footer-info {
+
         display: grid;
         align-items: center;
         gap: 2px;
@@ -92,6 +97,7 @@
         margin-bottom: 10px;
 
     }
+
     footer .btn-primary {
         margin: auto;
     }
@@ -214,4 +220,33 @@ FOOTER FIN
     .id_11 .design-four {
         margin-bottom: 20px;
     }
+
+
+
+    /*++++++++++++++++++++++++++++++++
+INICIO SECCION COMPLETA DIRECTORIO
+ ++++++++++++++++++++++++++++++++++++++++ */
+
+    .id_30 .design-two h2 {
+        display: none !important;
+    }
+
+    .id_30 .design-two {
+        margin-bottom: 45px;
+    }
+
+    .id_30 .design-two h2.titulo-1 {
+        display: block !important;
+        text-align: center;
+    }
+    .id_30 .design-two .col-sm-6:nth-child(2) {
+        padding: 0 15px 0 15px;
+    }
+    .id_30 .design-two .descripcion{
+        margin-top: 20px;
+    }
+
+    /*++++++++++++++++++++++++++++++++
+FIN SECCION COMPLETA DIRECTORIO
+ ++++++++++++++++++++++++++++++++++++++++ */
 }

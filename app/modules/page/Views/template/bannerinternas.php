@@ -1,42 +1,72 @@
-<?php foreach($this->coops as $key => $seccion){ ?>
-    <?php foreach($seccion as $key1 => $banner){ ?>
-        <?php foreach($banner as $key2 => $itemBanner){ ?>
-            <?php foreach($itemBanner as $key3 => $item){ ?>
-                <div class="banner-internas" style="margin-top: 50px;">
-                    <div id="carouselprincipal<?php echo $item->cooperativa_id;  ?>" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <?php foreach($item as $key4 => $it){ ?>
-                            <li data-bs-target="#carouselprincipal<?php echo $item->cooperativa_id;  ?>" data-slide-to="0" <?php if($key4==0){ ?>class="active"<?php }?> ></li>
-                        <?php } ?>
-                    </ol>
-                        <div class="carousel-inner">
-                            <?php foreach($item as $key4 => $it){ ?>
-                                <?php if($it->cooperativa_id){ ?>
-                                    <div class="carousel-item <?php if($key4 == 0){ ?>active <?php } ?>">
-                                        <a href="<?php echo $it->cooperativa_enlace; ?>" <?php if ($it->cooperativa_enlace_abrir == 1) { ?> target="_blank"  <?php } ?>>
-                                                <div class="fondo-imagen" style="background-image: url(/images/<?php echo $it->cooperativa_fondo_imagen; ?>);"></div>
-                                        </a>
-                                    </div>
-                                <?php } ?>
-                            <?php } ?>
+<div class="slider-internas">
+
+    <div id="carouselprincipal<?php echo $this->seccionbanner;  ?>" class="carousel slide" data-bs-ride="carousel">
+        <!-- <ol class="carousel-indicators">
+      <?php foreach ($this->banners as $key => $banner) { ?>
+      <li data-bs-target="#carouselprincipal<?php echo $this->seccionbanner;  ?>" data-slide-to="0" <?php if (
+                                                                                                        $key == 0
+                                                                                                    ) { ?>class="active" <?php }  ?>></li>
+      <?php } ?>
+    </ol> -->
+        <div class="carousel-inner">
+            <?php foreach ($this->banners as $key => $banner) { ?>
+                <div class="carousel-item <?php if ($key == 0) { ?>active <?php } ?>">
+
+                    <?php if ($this->id_youtube($banner->publicidad_video) != false) { ?>
+                        <div class="fondo-video-youtube">
+                            <div class="banner-video-youtube" id="videobanner<?php echo $banner->publicidad_id; ?> " data-video="<?php echo $this->id_youtube($banner->publicidad_video); ?>"></div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselprincipal<?php echo $this->seccionbanner;  ?>" role="button"
-                            data-slide="prev">
-                            <span class="carrusel-derecha" aria-hidden="true">
-                                <i class="fas fa-chevron-left"></i>      
-                            </span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselprincipal<?php echo $this->seccionbanner;  ?>" role="button"
-                            data-slide="next">
-                            <span class="carrusel-izquierda" aria-hidden="true">
-                                <i class="fas fa-chevron-right"></i> 
-                            </span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+                    <?php } else { ?>
+
+                        <div class="fondo-imagen-interna d-none d-sm-flex justify-content-end align-items-center">
+
+                            <img src="/images/<?php echo $banner->publicidad_imagen; ?>" alt="" class="img-banner-interna">
+                            <!-- <h2><?php echo $banner->publicidad_nombre; ?></h2> -->
+
+                            <?php if ($banner->mostrarinfo == 1) { ?>
+
+                                <div class="contenido-banner">
+
+                                    <h4><?php echo $banner->publicidad_nombre; ?></h4>
+                                    <?php echo $banner->publicidad_descripcion; ?>
+                                    <?php if ($banner->publicidad_enlace) { ?>
+                                        <a href="<?php echo $banner->publicidad_enlace; ?>" <?php echo $banner->publicidad_tipo_enlace == 1 ? 'target="_blank"' : ''; ?> class="btn-azul">
+                                            <?php echo $banner->publicidad_texto_enlace  ? $banner->publicidad_texto_enlace : 'Ver más'; ?>
+
+                                        </a>
+                                    <?php } ?>
+
+                                </div>
+                            <?php } ?>
+
+
+                        </div>
+
+                        <div class="fondo-imagen-responsive d-sm-none d-flex justify-content-center align-items-center">
+                            <img src="/images/<?php echo $banner->publicidad_imagenresponsive; ?>" alt="" class="img-banner-internas w-100">
+                            <h2 class="titulo-banner-internas"><?php echo $banner->publicidad_nombre; ?></h2>
+                        </div>
+
+                    <?php } ?>
+
+
+
+
                 </div>
             <?php } ?>
+        </div>
+        <?php if (count($this->banners) > 1) { ?>
+
+            <button type="button" class="carousel-control-prev" data-bs-target="#carouselprincipal<?php echo $this->seccionbanner;  ?>" data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                <i class="fa-solid fa-location-arrow carousel-control-prev-icono"></i>
+            </button>
+
+            <button type="button" class="carousel-control-next" data-bs-target="#carouselprincipal<?php echo $this->seccionbanner;  ?>" data-bs-slide="next">
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                <i class="fa-solid fa-location-arrow carousel-control-next-icono"></i>
+            </button>
         <?php } ?>
-    <?php } ?>
-<?php } ?>
+
+    </div>
+</div>

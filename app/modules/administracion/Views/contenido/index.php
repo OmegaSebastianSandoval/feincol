@@ -164,7 +164,7 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-												<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+												<button type="button" class="btn btn-default" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
 												<a class="btn btn-danger" href="<?php echo $this->route; ?>/delete?id=<?= $id ?>&csrf=<?= $this->csrf; ?><?php if ($this->padre) { echo "&padre=" . $this->padre; } ?>">Eliminar</a>
                       </div>
                     </div>
