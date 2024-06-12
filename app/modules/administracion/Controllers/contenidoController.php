@@ -422,6 +422,8 @@ class Administracion_contenidoController extends Administracion_mainController
     $array['1'] = 'Home';
     $array['2'] = 'Header';
     $array['3'] = 'Enlaces extra';
+    $array['4'] = 'Afíliate';
+
 
     return $array;
   }

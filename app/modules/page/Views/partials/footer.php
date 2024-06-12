@@ -8,16 +8,16 @@
                     <img src="/corte/Logo-Footer.png/" alt="Logo FEINCOL footer">
 
                 </div>
-                <div class="mt-2">
+                <div class="mt-2 footer-desc">
                     <?php echo $this->infopage->info_pagina_informacion_contacto_footer ?>
                 </div>
             </div>
-            <div class="col-12 col-lg-4  d-flex flex-column gap-3">
+            <div class="col-12 col-lg-4  d-flex flex-column gap-1 gap-md-3">
 
                 <span class="titulo-footer">Enlaces Extra</span>
                 <?php echo $this->enlacesFooter ?>
             </div>
-            <div class="col-12 col-lg-5 content-info-footer d-flex flex-column gap-3">
+            <div class="col-12 col-lg-5 content-info-footer d-flex flex-column gap-1 gap-md-3">
                 <span class="titulo-footer">Contáctanos</span>
                 <?php if ($this->infopage->info_pagina_direccion_contacto) { ?>
                     <div class="footer-info">
@@ -52,7 +52,7 @@
             </div>
 
             <div class="col-12 col-lg-5 content-info-footer d-flex  align-items-end">
-                <div class="redes-footer d-flex gap-3">
+                <div class="redes-footer d-flex gap-1 gap-md-3">
                     Siguenos en nuestras redes sociales
 
                     <?php if ($this->infopage->info_pagina_youtube) { ?>

@@ -1,16 +1,16 @@
 <div class="container">
-    <div class="row p-4 d-flex justify-content-between">
+    <div class="row p-1 p-md-4 d-flex justify-content-between">
         <div class="col-12 col-md-6">
-            <!-- <span class="welcome-text">¡Bienvenidos! <span class="highlight">más de <span class="years">43 años</span></span> de experiencia</span> -->
+            
             <?php echo $this->contenidoHeader->contenido_descripcion ?>
             <div class="d-flex justify-content-between align-items-center g-4">
                 <img src="/corte/Logo-Header.png" class="logo-header" alt="Logo de FEINCOL">
-                <a href="#" class="btn-azul-oscuro">
+                <a href="#" class="btn-azul-oscuro d-none d-md-flex">
                     <img src="/corte/UbicacionHeader.png" alt="Imagen de contacto">
                     Zona Privada</a>
             </div>
         </div>
-        <div class="col-12 col-md-5 gap-2 d-grid">
+        <div class="col-12 col-md-5 gap-2 d-none d-md-grid">
             <?php if ($this->infopage->info_pagina_direccion_contacto) { ?>
                 <div class="header-top-info">
                     <img src="/corte/UbicacionHeader.png" alt="Imagen de contacto">
@@ -39,7 +39,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="filter: invert(1);">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -74,15 +74,26 @@
                 <div class="vr"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Afíliate</a>
+                    <a class="nav-link" target="_blank" download href="/files/<?php echo $this->contenidoafiliate->contenido_archivo?>">Afíliate</a>
                 </li>
                 <div class="vr"></div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Escríbenos</a>
+               
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Escríbenos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Felicitaciones</a></li>
+                        <li><a class="dropdown-item" href="#">Directorio</a></li>
+                        
+                        <li><a class="dropdown-item" href="#">Formulario de contacto</a></li>
+                    </ul>
                 </li>
                 <div class="vr"></div>
-
+                <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="#">Zona privada</a>
+                </li>
                 <!--  <li class="nav-item">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

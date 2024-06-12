@@ -16,6 +16,9 @@ class Page_mainController extends Controllers_Abstract
 		$infopageModel = new Page_Model_DbTable_Informacion();
 		$contenidoModel = new Page_Model_DbTable_Contenido();
 		$this->_view->contenidoHeader = $contenidoModel->getById(1);
+
+		$this->_view->contenidoafiliate = $contenidoModel->getById(29);
+
 		$this->_view->enlacesFooter = $this->template->getContentseccion(3);
 
 		$informacion = $infopageModel->getById(1);

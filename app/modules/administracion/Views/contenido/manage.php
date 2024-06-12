@@ -80,7 +80,7 @@
 					</label>
 					<div class="help-block with-errors"></div>
 				</div>
-				<div class="col-3 <?php if($this->content->contenido_padre==0){ ?>d-none <?php } ?> form-group no-banner no-carrousel no-acordion si-seccion" <?php if( $tipo != 2 && $tipo != 4){ ?> style="display: none;" <?php } ?>>
+				<div class="col-3  form-group no-banner no-carrousel no-acordion si-seccion" <?php if( $tipo != 2 && $tipo != 4){ ?> style="display: none;" <?php } ?>>
 					<label class="control-label " >Alineación</label>
 					<label class="input-group">
 						<div class="input-group-prepend">

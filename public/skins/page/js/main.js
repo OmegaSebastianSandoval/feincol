@@ -81,53 +81,83 @@ document.addEventListener("scroll", () => {
     // Retrasa la eliminación de la clase 'released' para permitir la transición
   }
 });
-document.addEventListener("DOMContentLoaded",()=>{
-  
-document.getElementById("formulario-contacto").addEventListener("submit", function(e) {
-  e.preventDefault();
-  var response = grecaptcha.getResponse();
-  if (response.length === 0) {
-    Swal.fire({
-      icon: "warning",
-      text: "Por favor, verifica que no eres un robot.",
-    });
-  } else {
-    let formData = new FormData(this);
-    let data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  /* $(document).ajaxStart(function () {
+    $(".loader-bx").addClass("show");
+  });
 
-    console.log(data);
+  $(document).ajaxStop(function () {
+    $(".loader-bx").removeClass("show");
+  });
+ */
+  document
+    .getElementById("formulario-contacto")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+      var response = grecaptcha.getResponse();
+      if (response.length === 0) {
+        Swal.fire({
+          icon: "warning",
+          text: "Por favor, verifica que no eres un robot.",
+          confirmButtonColor: "#192a4b",
+          confirmButtonText: "Continuar",
+        });
+      } else {
+        $(".loader-bx").addClass("show");
 
-    fetch(this.getAttribute("action"), {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === "success") {
-        Swal.fire({
-          icon: "success",
-          text: "Hemos recibido tu mensaje, te responderemos a la brevedad.",
+        let submitBtn = document.getElementById("submit-btn");
+        // Deshabilitar botón y mostrar animación
+        submitBtn.disabled = true;
+
+        let formData = new FormData(this);
+        let data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
         });
-      } else if (data.status === "error") {
-        Swal.fire({
-          icon: "error",
-          text: "Ha ocurrido un error, por favor intenta de nuevo.",
-        });
+
+        // console.log(data);
+
+        fetch(this.getAttribute("action"), {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.status === "success") {
+              Swal.fire({
+                icon: "success",
+                text: "Hemos recibido tu mensaje, te responderemos a la brevedad.",
+                confirmButtonColor: "#192a4b",
+                confirmButtonText: "Continuar",
+              });
+            } else if (data.status === "error") {
+              Swal.fire({
+                icon: "error",
+                text: "Ha ocurrido un error, por favor intenta de nuevo.",
+                confirmButtonColor: "#192a4b",
+                confirmButtonText: "Continuar",
+              });
+            }
+            document.getElementById("formulario-contacto").reset();
+            // Habilitar botón y ocultar animación
+            submitBtn.disabled = false;
+            $(".loader-bx").removeClass("show");
+          })
+
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              text: "Ha ocurrido un error, por favor intenta de nuevo.",
+              confirmButtonColor: "#192a4b",
+              confirmButtonText: "Continuar",
+            });
+            // Habilitar botón y ocultar animación
+            submitBtn.disabled = false;
+            $(".loader-bx").removeClass("show");
+          });
       }
-    })
-    .catch(error => {
-      Swal.fire({
-        icon: "error",
-        text: "Ha ocurrido un error, por favor intenta de nuevo.",
-      });
     });
-  }
-})
-
-})
+});
