@@ -1,5 +1,5 @@
 <?php
-define('DEFAULT_TITLE', 'FEINCOL');// titulo general para toda la pagina
+define('DEFAULT_TITLE', 'FEINCOL - Entidad asociativa sin ánimo de lucro');// titulo general para toda la pagina
 
 $config = array(); //
 

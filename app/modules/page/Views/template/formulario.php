@@ -1,4 +1,4 @@
-<section id="<?php echo $contenedor->contenido_id ?>" class="
+<section  data-aos="fade-up" id="<?php echo $contenedor->contenido_id ?>" class="
     id_<?php echo $contenedor->contenido_id ?> 
     <?php echo $contenedor->contenido_columna; ?> 
     contenedor-seccion 

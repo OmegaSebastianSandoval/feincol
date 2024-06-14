@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
  */
   document
     .getElementById("formulario-contacto")
-    .addEventListener("submit", function (e) {
+    ?.addEventListener("submit", function (e) {
       e.preventDefault();
       var response = grecaptcha.getResponse();
       if (response.length === 0) {

@@ -84,4 +84,25 @@ class Core_Model_Sendingemail
       return 2;
     }
   }
+
+  
+  public function sendMailFormulario($data)
+  {
+    $this->_view->data = $data;
+    $infopageModel = new Page_Model_DbTable_Informacion();
+		$informacion = $infopageModel->getById(1);
+
+    // $this->email->getMail()->addAddress($data, "");
+    $this->email->getMail()->addAddress("desarrollo8@omegawebsystems.com");
+    $content = $this->_view->getRoutPHP('/../app/modules/core/Views/templatesemail/mailFormulario.php');
+    $this->email->getMail()->Subject = 'Formulario de contacto FEINCOL';
+    $this->email->getMail()->msgHTML($content);
+    $this->email->getMail()->AltBody = $content;
+    $this->email->getMail()->addBCC($informacion->info_pagina_correo_oculto);
+    if ($this->email->sed() == true) {
+      return 1;
+    } else {
+      return 2;
+    }
+  }
 }

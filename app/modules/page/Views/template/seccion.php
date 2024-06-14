@@ -1,27 +1,56 @@
-<section 
-  id="<?php echo $contenedor->contenido_id ?>" 
-  class="
+<section data-aos="fade-up" data-aos-anchor-placement="top-bottom" id="<?php echo $contenedor->contenido_id ?>" class=" 
     id_<?php echo $contenedor->contenido_id ?> 
     <?php echo $contenedor->contenido_columna; ?> 
     contenedor-seccion 
     <?php if ($contenedor->contenido_fondo_imagen_tipo == 2) { ?>dinamica<?php } ?>" style="background-image:url(/images/<?php echo $contenedor->contenido_fondo_imagen; ?>); background-color:<?php echo $contenedor->contenido_fondo_color; ?>;">
-  <div class="content-box container">
-		<?php if ($contenedor->contenido_titulo_ver == 1) { ?>
-			<h2><?php echo $contenedor->contenido_titulo; ?></h2>
-		<?php } ?>
-		<?php if ($contenedor->contenido_introduccion != "") { ?>
-			<div class="introduccion-seccion"><?php echo $contenedor->contenido_introduccion; ?></div>
-		<?php } ?>
+	<div class="content-box container">
+		<div class="contenido-seccion">
 
-		<?php if ($contenedor->contenido_descripcion ) { ?>
-			<div class="descripcion-seccion"><?php echo $contenedor->contenido_descripcion; ?></div>
-		<?php } ?>
-		<?php if ($contenedor->contenido_enlace ) { ?>
-			<div class="boton">
-				<a href="<?php echo $contenedor->contenido_enlace; ?>" <?php if ($contenedor->contenido_enlace_abrir == 1) { ?>target="_blank" <?php } ?> <?php if ($contenedor->contenedor_enlace_abrir == 1) { ?> target="_blank" <?php } ?> class="btn btn-vermas"> <?php if ($contenedor->contenedor_vermas) { ?><?php echo $contenedor->contenido_vermas; ?><?php } else { ?>VER MÁS<?php } ?></a>
-			</div>
-		<?php } ?>
-		<?php if (is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0) { ?>
+			<?php if ($contenedor->contenido_imagen) { ?>
+				<div class="imagen-contenido-simple">
+					<img src="/images/<?php echo $contenedor->contenido_imagen; ?>">
+				</div>
+			<?php } ?>
+
+			<?php if ($contenedor->contenido_titulo_ver == 1) { ?>
+				<h2><?php echo $contenedor->contenido_titulo; ?></h2>
+			<?php } ?>
+
+			<?php if ($contenedor->contenido_introduccion != "") { ?>
+				<div class="introduccion-seccion"><?php echo $contenedor->contenido_introduccion; ?></div>
+			<?php } ?>
+
+			<?php if ($contenedor->contenido_descripcion) { ?>
+				<div class="descripcion-seccion"><?php echo $contenedor->contenido_descripcion; ?></div>
+			<?php } ?>
+
+
+			<?php if ($contenedor->contenido_enlace && $contenedor->contenido_seccion != 14) { ?>
+				<div class="boton">
+					<a href="<?php echo $contenedor->contenido_enlace; ?>" <?php if ($contenedor->contenido_enlace_abrir == 1) { ?>target="_blank" <?php } ?> <?php if ($contenedor->contenido_enlace_abrir == 1) { ?> target="_blank" <?php } ?> class="btn btn-azul"> <?php if ($contenedor->contenido_vermas) { ?><?php echo $contenedor->contenido_vermas; ?><?php } else { ?>VER MÁS<?php } ?></a>
+				</div>
+			<?php } ?>
+			<?php 
+				// print_r($contenedor);
+			
+			if ($contenedor->contenido_seccion == 14 && $contenedor->contenido_tipo ==2) { 
+				?>
+				
+				<div class="boton">
+					<a href="/page/felicidad/item?id=<?php echo $contenedor->contenido_id; ?>" class="btn btn-azul">Leer más</a>
+				</div>
+			<?php }	?>
+		</div>
+
+		<?php
+		
+		
+		if (
+			(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 &&$contenedor->contenido_seccion != 14  ) ||
+			(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 && $contenedor->contenido_seccion == 14 && $contenedor->mostrar == 1)
+		) {
+
+		?>
 			<div class="row <?php if ($contenedor->contenido_columna_alineacion == 2) { ?>justify-content-center text-center<?php } else if ($contenedor->contenido_columna_alineacion == 3) { ?> justify-content-end text-right<?php } else { ?> justify-content-start text-left<?php } ?> <?php if ($contenedor->contenido_columna_espacios == 2 || $contenedor->contenido_columna_espacios == 4) { ?> no-gutters <?php } ?>">
 
 				<?php foreach ($rescontenido['hijos'] as $key => $rescolumna) : ?>
@@ -39,7 +68,7 @@
 								<?php include(APP_PATH . "modules/page/Views/template/disenio4.php"); ?>
 							<?php } else if ($columna->contenido_disenio == 5) { ?>
 								<?php include(APP_PATH . "modules/page/Views/template/disenio5.php"); ?>
-							<?php } else if ($columna->contenido_disenio == 6) {?>
+							<?php } else if ($columna->contenido_disenio == 6) { ?>
 								<?php include(APP_PATH . "modules/page/Views/template/disenio6.php"); ?>
 							<?php } ?>
 						<?php } else if ($columna->contenido_tipo == 6) { ?>

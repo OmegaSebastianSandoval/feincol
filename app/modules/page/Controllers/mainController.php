@@ -76,7 +76,7 @@ class Page_mainController extends Controllers_Abstract
     }
 	
 	public function isActiveInicio() {
-        $activeButtons = [1, 11,12, 13, 14]; // Agrega todos los números que pueden activar el botón aquí
+        $activeButtons = [2, 11,12, 13, 14]; // Agrega todos los números que pueden activar el botón aquí
         return $activeButtons ;
     }
 

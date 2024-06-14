@@ -322,6 +322,12 @@ class Administracion_publicidadController extends Administracion_mainController
     $array['9'] = 'Organigrama';
     $array['10'] = 'Nuestra historia';
     $array['11'] = 'Normatividad';
+    $array['12'] = 'Actualización de datos';
+    $array['13'] = 'Formulario de contacto';
+    $array['14'] = 'Felicidad';
+
+
+
 
 
 

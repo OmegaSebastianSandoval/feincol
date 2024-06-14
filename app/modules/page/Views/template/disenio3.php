@@ -1,4 +1,4 @@
-<div class="caja-contenido-simple design-three three-<?php echo $contenido->contenido_id; ?>" style="background-color:
+<div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="caja-contenido-simple design-three three-<?php echo $contenido->contenido_id; ?>" style="background-color:
   <?php
   if ($contenido->contenido_fondo_color) {
     echo $contenido->contenido_fondo_color;

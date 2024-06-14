@@ -42,12 +42,19 @@
 
   <script src="/components/jquery-knob/js/jquery.knob.js"></script>
 
+  <!-- AOS -->
+
+  <link rel="stylesheet" href="/components/aos-master/dist/aos.css">
+  <script src="/components/aos-master/dist/aos.js"></script>
+
+
+
   <!-- SweetAlert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Pollifyl -->
 
-<!-- <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script> -->
+  <!-- <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script> -->
 
 
   <!-- Main Js -->
@@ -101,6 +108,11 @@
     }
   </script>
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    AOS.init();
+  })
+</script>
 
 <body>
   <header>
@@ -114,5 +126,6 @@
   <?= $this->_data['adicionales']; ?>
 
 </body>
+
 
 </html>

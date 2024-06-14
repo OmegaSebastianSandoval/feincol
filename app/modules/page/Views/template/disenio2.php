@@ -1,4 +1,4 @@
-<div class="caja-contenido-simple design-two" style="background-color: <?php if ($contenido->contenido_fondo_color) {
+<div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="caja-contenido-simple design-two" style="background-color: <?php if ($contenido->contenido_fondo_color) {
 																			echo  $contenido->contenido_fondo_color;
 																		} else if ($colorfondo) {
 																			echo $colorfondo;
@@ -10,7 +10,7 @@
 	<div class="row">
 		<?php if ($contenido->contenido_imagen) { ?>
 			<div class="col-sm-6">
-				<div class="text-center"><img loading="lazy" src="/images/<?php echo $contenido->contenido_imagen; ?>"></div>
+				<div class="imagen-contenido"><img loading="lazy" src="/images/<?php echo $contenido->contenido_imagen; ?>"></div>
 			</div>
 		<?php } ?>
 		<div <?php if ($contenido->contenido_imagen) { ?>class="col-sm-6" <?php } else { ?>class="col-sm-12" <?php } ?>>

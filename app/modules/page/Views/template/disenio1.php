@@ -1,4 +1,4 @@
-<div class="caja-contenido-simple design-one" style="background-color: <?php if($contenido->contenido_fondo_color){ echo  $contenido->contenido_fondo_color;  } else if($colorfondo){ echo $colorfondo; }   ?>">
+<div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="caja-contenido-simple design-one" style="background-color: <?php if($contenido->contenido_fondo_color){ echo  $contenido->contenido_fondo_color;  } else if($colorfondo){ echo $colorfondo; }   ?>">
 	<?php if($contenido->contenido_titulo_ver == 1){ ?>
 		<h2><?php echo $contenido->contenido_titulo; ?></h2>
 	<?php } ?>
@@ -20,7 +20,7 @@
 		</div>
 		<?php if($contenido->contenido_imagen){ ?>
 			<div class="col-sm-3">
-				<div class="text-center"><img src="/images/<?php echo $contenido->contenido_imagen; ?>"></div>
+				<div class="imagen-contenido"><img src="/images/<?php echo $contenido->contenido_imagen; ?>"></div>
 			</div>
 		<?php } ?>
 	</div>

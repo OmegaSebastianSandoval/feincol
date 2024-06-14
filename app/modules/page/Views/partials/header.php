@@ -56,10 +56,15 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                
+
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $this->botonactivo == 1 ? 'active' : '' ?>" href="/">Inicio</a>
+                </li>
+                <div class="vr"></div>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php echo $isActiveInicio ? 'active' : '' ?>" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Inicio
+                    <a class="nav-link dropdown-toggle <?php echo $isActiveInicio ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Nuestro Fondo
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item  <?php echo $this->botonactivo == 11 ? 'active' : '' ?>" href="/page/quienessomos">¿Quienes somos?</a></li>
@@ -69,10 +74,7 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                         <li><a class="dropdown-item  <?php echo $this->botonactivo == 14 ? 'active' : '' ?>" href="/page/normatividad">Normatividad</a></li>
                     </ul>
                 </li>
-                <div class="vr"></div>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo $this->botonactivo == 2 ? 'active' : '' ?>" href="#">Nuestro Fondo</a>
-                </li>
+
                 <div class="vr"></div>
 
                 <li class="nav-item dropdown">
@@ -80,25 +82,39 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                         Portafolio
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Ahorros</a></li>
+                        <li><a class="dropdown-item" href="#">Créditos</a></li>
+                        <li><a class="dropdown-item" href="#">Servicios de previsión</a></li>
+
+
                         <li><a class="dropdown-item <?php echo $this->botonactivo == 8 ? 'active' : '' ?>" href="/page/beneficios">Beneficios sociales</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        <li><a class="dropdown-item" href="#">Tarjeta GES</a></li>
+                        <li><a class="dropdown-item" href="#">Convenios</a></li>
+
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
                 <div class="vr"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link <?php echo $this->botonactivo == 4 ? 'active' : '' ?>" href="#">Felicidad</a>
+                    <a class="nav-link <?php echo $this->botonactivo == 4 ? 'active' : '' ?>" href="/page/felicidad">Felicidad</a>
                 </li>
                 <div class="vr"></div>
 
                 <li class="nav-item">
-                    <a class="nav-link <?php echo $this->botonactivo == 5 ? 'active' : '' ?>" target="_blank" download href="/files/<?php echo $this->contenidoafiliate->contenido_archivo ?>">Afíliate</a>
+                    <a class="nav-link <?php echo $this->botonactivo == 16 ? 'active' : '' ?>" href="#">Novedades</a>
                 </li>
                 <div class="vr"></div>
+
+                <li class="nav-item d-none">
+                    <a class="nav-link <?php echo $this->botonactivo == 15 ? 'active' : '' ?>" href="/page/actualizacion">Actualización de datos</a>
+                </li>
+                <div class="vr  d-none"></div>
+
+                <li class="nav-item d-none">
+                    <a class="nav-link <?php echo $this->botonactivo == 5 ? 'active' : '' ?>" target="_blank" download href="/files/<?php echo $this->contenidoafiliate->contenido_archivo ?>">Afíliate</a>
+                </li>
+                <div class="vr  d-none"></div>
 
 
                 <li class="nav-item dropdown">
@@ -109,7 +125,7 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                         <li><a class="dropdown-item  <?php echo $this->botonactivo == 6 ? 'active' : '' ?>" href="/page/felicitaciones">Felicitaciones</a></li>
                         <li><a class="dropdown-item  <?php echo $this->botonactivo == 7 ? 'active' : '' ?>" href="/page/directorio">Directorio</a></li>
 
-                        <li><a class="dropdown-item" href="#">Formulario de contacto</a></li>
+                        <li><a class="dropdown-item" href="/page/formulario">Formulario de contacto</a></li>
                     </ul>
                 </li>
                 <div class="vr"></div>
