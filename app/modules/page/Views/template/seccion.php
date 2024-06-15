@@ -13,7 +13,7 @@
 			<?php } ?>
 
 			<?php if ($contenedor->contenido_titulo_ver == 1) { ?>
-				<h2><?php echo $contenedor->contenido_titulo; ?></h2>
+				<h2 class="titulo-seccion"><?php echo $contenedor->contenido_titulo; ?></h2>
 			<?php } ?>
 
 			<?php if ($contenedor->contenido_introduccion != "") { ?>
@@ -25,7 +25,11 @@
 			<?php } ?>
 
 
-			<?php if ($contenedor->contenido_enlace && $contenedor->contenido_seccion != 14) { ?>
+			<?php if ($contenedor->contenido_enlace 
+			&& $contenedor->contenido_seccion != 14
+			&& $contenedor->contenido_seccion != 18
+
+			) { ?>
 				<div class="boton">
 					<a href="<?php echo $contenedor->contenido_enlace; ?>" <?php if ($contenedor->contenido_enlace_abrir == 1) { ?>target="_blank" <?php } ?> <?php if ($contenedor->contenido_enlace_abrir == 1) { ?> target="_blank" <?php } ?> class="btn btn-azul"> <?php if ($contenedor->contenido_vermas) { ?><?php echo $contenedor->contenido_vermas; ?><?php } else { ?>VER MÁS<?php } ?></a>
 				</div>
@@ -40,14 +44,27 @@
 					<a href="/page/felicidad/item?id=<?php echo $contenedor->contenido_id; ?>" class="btn btn-azul">Leer más</a>
 				</div>
 			<?php }	?>
+			<?php 
+				// print_r($contenedor);
+			
+			if ($contenedor->contenido_seccion == 18 && $contenedor->contenido_tipo ==2) { 
+				?>
+				
+				<div class="boton">
+					<a href="/page/servicios/item?id=<?php echo $contenedor->contenido_id; ?>" class="btn btn-amarillo">Leer más</a>
+				</div>
+			<?php }	?>
 		</div>
 
 		<?php
 		
 		
 		if (
-			(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 &&$contenedor->contenido_seccion != 14  ) ||
+			(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 &&$contenedor->contenido_seccion != 14 && $contenedor->contenido_seccion != 18)
+			 ||
 			(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 && $contenedor->contenido_seccion == 14 && $contenedor->mostrar == 1)
+			||
+			(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 && $contenedor->contenido_seccion == 18 && $contenedor->mostrar == 1)
 		) {
 
 		?>

@@ -66,7 +66,7 @@ class Page_mainController extends Controllers_Abstract
 	}
 
 	public function isActivePortafolio() {
-        $activeButtons = [3, 8]; // Agrega todos los números que pueden activar el botón aquí
+        $activeButtons = [3, 8, 17, 18, 19, 20, 21]; // Agrega todos los números que pueden activar el botón aquí
         return $activeButtons ;
     }
 

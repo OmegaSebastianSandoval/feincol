@@ -18,8 +18,13 @@
 				<?php } ?>
 			</div>
 		</div>
-		<?php if($contenido->contenido_imagen){ ?>
-			<div class="col-sm-3">
+		<?php 
+		// Condición para determinar la clase de la imagen
+		$image_col_class = ($contenido->contenido_titulo_ver != 1 && !$contenido->contenido_enlace && !$contenido->contenido_descripcion) ? 'col-12' : 'col-sm-3';
+
+		
+		if($contenido->contenido_imagen){ ?>
+			<div class="<?php echo $image_col_class; ?>">
 				<div class="imagen-contenido"><img src="/images/<?php echo $contenido->contenido_imagen; ?>"></div>
 			</div>
 		<?php } ?>

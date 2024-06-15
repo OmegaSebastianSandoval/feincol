@@ -433,7 +433,12 @@ class Administracion_contenidoController extends Administracion_mainController
     $array['12'] = 'Actualización de datos';
     $array['13'] = 'Formulario de contacto';
     $array['14'] = 'Felicidad';
-
+    $array['15'] = 'Convenios';
+    $array['16'] = 'Nuestros asociados opinan';
+    $array['17'] = 'Tarjeta GES';
+    $array['18'] = 'Servicios';
+    $array['19'] = 'Ahorros';
+    $array['20'] = 'Créditos';
 
 
 

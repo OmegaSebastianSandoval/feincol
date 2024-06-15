@@ -82,14 +82,14 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                         Portafolio
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Ahorros</a></li>
-                        <li><a class="dropdown-item" href="#">Créditos</a></li>
-                        <li><a class="dropdown-item" href="#">Servicios de previsión</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 19 ? 'active' : '' ?>" href="#">Ahorros</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 20 ? 'active' : '' ?>" href="#">Créditos</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 21 ? 'active' : '' ?>" href="/page/servicios">Servicios de previsión</a></li>
 
 
                         <li><a class="dropdown-item <?php echo $this->botonactivo == 8 ? 'active' : '' ?>" href="/page/beneficios">Beneficios sociales</a></li>
-                        <li><a class="dropdown-item" href="#">Tarjeta GES</a></li>
-                        <li><a class="dropdown-item" href="#">Convenios</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 18 ? 'active' : '' ?>" href="/page/tarjetages">Tarjeta GES</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 17 ? 'active' : '' ?>" href="/page/convenios">Convenios</a></li>
 
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>

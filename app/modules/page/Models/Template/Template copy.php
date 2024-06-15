@@ -138,9 +138,9 @@ class Page_Model_Template_Template
 			}
 		}
 		$this->_view->contenidos = $contenidos;
-		/* echo "<pre>";
-		print_r($contenidos);
-		echo "</pre>"; */
+		echo "<pre>";
+		print_r($id);
+		echo "</pre>";
 		return $this->_view->getRoutPHP("modules/page/Views/template/contenedor.php");
 	}
 
