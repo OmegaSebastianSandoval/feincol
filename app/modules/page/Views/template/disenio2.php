@@ -23,14 +23,20 @@
 			<div class="descripcion">
 				<?php echo $contenido->contenido_descripcion; ?>
 			</div>
-			<?php if ($contenido->contenido_archivo) { ?>
+			<?php if ($contenido->contenido_archivo && $contenido->contenido_seccion != 18) { ?>
 				<div align="center" class="archivo">
-					<a href="/files/<?php echo $contenido->contenido_archivo ?>" target="blank">Descargar Archivo <i class="fas fa-download"></i></a>
+					<a href="/files/<?php echo $contenido->contenido_archivo ?>" target="_blank">Descargar Archivo <i class="fas fa-download"></i></a>
 				</div>
 			<?php } ?>
+			<?php if ($contenido->contenido_archivo && $contenido->contenido_seccion == 18) { ?>
+				<div align="center" class="archivo">
+					<a class="btn-amarillo" href="/files/<?php echo $contenido->contenido_archivo ?>" target="_blank"><?php if ($contenido->contenido_vermas) { ?><?php echo $contenido->contenido_vermas; ?><?php } else { ?>Descargar Archivo <i class="fas fa-download"></i><?php } ?> </a>
+				</div>
+			<?php } ?>
+
 			<?php if ($contenido->contenido_enlace) { ?>
 				<div>
-					<a href="" class="btn btn-block btn-vermas" <?php if ($contenido->contenido_enlace_abrir == 1) { ?> target="blank" <?php } ?>> <?php if ($contenido->contenido_vermas) { ?><?php echo $contenido->contenido_vermas; ?><?php } else { ?>Ver Más<?php } ?></a>
+					<a href="<?php echo $contenido->contenido_enlace ?>" class="btn btn-block btn-vermas" <?php if ($contenido->contenido_enlace_abrir == 1) { ?> target="_blank" <?php } ?>> <?php if ($contenido->contenido_vermas) { ?><?php echo $contenido->contenido_vermas; ?><?php } else { ?>Ver Más<?php } ?></a>
 				</div>
 			<?php } ?>
 		</div>

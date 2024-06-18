@@ -28,6 +28,8 @@
 			<?php if ($contenedor->contenido_enlace 
 			&& $contenedor->contenido_seccion != 14
 			&& $contenedor->contenido_seccion != 18
+			&& $contenedor->contenido_seccion != 20
+
 
 			) { ?>
 				<div class="boton">
@@ -52,6 +54,16 @@
 				
 				<div class="boton">
 					<a href="/page/servicios/item?id=<?php echo $contenedor->contenido_id; ?>" class="btn btn-amarillo">Leer más</a>
+				</div>
+			<?php }	?>
+			<?php 
+				// print_r($contenedor);
+			
+			if ($contenedor->contenido_seccion == 20 && $contenedor->contenido_tipo ==2) { 
+				?>
+				
+				<div class="boton">
+					<a href="/page/creditos/credito?id=<?php echo $contenedor->contenido_id; ?>" class="btn btn-azul">Leer más <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
 			<?php }	?>
 		</div>

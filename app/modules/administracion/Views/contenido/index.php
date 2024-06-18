@@ -130,16 +130,16 @@
 										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Banners"><i class="fas fa-images"></i></a>
 									<?php } ?>
 									<?php if ($content->contenido_tipo == 2) { ?>
-										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Columnas"><i class="fas fa-columns"></i></a>
+										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>&page=1" data-bs-toggle="tooltip" data-placement="top" title="Columnas"><i class="fas fa-columns"></i></a>
 									<?php } ?>
 									<?php if (($content->contenido_tipo == 16 and !$content->contenido_archivo) || ($content->contenido_tipo == 17 && !$content->contenido_archivo) || ($content->contenido_tipo == 18 && !$content->contenido_archivo) || ($content->contenido_tipo == 19 && !$content->contenido_archivo) || ($content->contenido_tipo == 20 && !$content->contenido_archivo) || ($content->contenido_tipo == 21 && !$content->contenido_archivo)) { ?>
-										<a class="btn btn-verde btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Documentos"><i class="fas fa-file-upload"></i></a>
+										<a class="btn btn-verde btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>&page=1" data-bs-toggle="tooltip" data-placement="top" title="Documentos"><i class="fas fa-file-upload"></i></a>
 									<?php } ?>
 									<?php if ($content->contenido_tipo == 15) { ?>
-										<a class="btn btn-verde btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Secciones documentos"><i class="fas fa-file"></i></a>
+										<a class="btn btn-verde btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>&page=1" data-bs-toggle="tooltip" data-placement="top" title="Secciones documentos"><i class="fas fa-file"></i></a>
 									<?php } ?>
 									<?php if ($content->contenido_tipo == 6 || $content->contenido_tipo == 7 || $content->contenido_tipo == 8) { ?>
-										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
+										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>&page=1" data-bs-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
 									<?php } ?>
 									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>
 
