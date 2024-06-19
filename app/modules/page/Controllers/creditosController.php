@@ -12,6 +12,6 @@ class Page_creditosController extends Page_mainController
     public function creditoAction()
     {
       $id = $this->_getSanitizedParam('id');
-      $this->_view->contenido = $this->template->traerContenidoPorPadre(18, $id);
+      $this->_view->contenido = $this->template->traerContenidoPorPadre(20, $id);
     }
 }

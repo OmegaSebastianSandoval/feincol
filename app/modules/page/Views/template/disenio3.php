@@ -31,11 +31,29 @@
     </div>
     <?php if ($contenido->contenido_enlace) { ?>
       <div class="d-flex justify-content-center w-100">
-        <a  href="<?php echo $contenido->contenido_enlace; ?>" <?php if ($contenido->contenido_enlace_abrir == 1) { ?> target="_blank" <?php } ?> class="btn btn-block btn-vermas">
+        <a href="<?php echo $contenido->contenido_enlace; ?>" <?php if ($contenido->contenido_enlace_abrir == 1) { ?> target="_blank" <?php } ?> class="btn btn-block btn-vermas">
           <?php if ($contenido->contenido_vermas) { ?><?php echo replaceBracketsWithSpan($contenido->contenido_vermas); ?><?php } else { ?>Ver
           Más<?php } ?>
         </a>
       </div>
     <?php } ?>
+    <?php
+
+
+    if (
+      $contenido->contenido_archivo &&
+      $contenido->contenido_seccion != 19 &&
+      $contenido->contenido_seccion != 18
+    ) { ?>
+      <div align="center" class="archivo">
+        <a href="/files/<?php echo $contenido->contenido_archivo ?>" target="_blank">Descargar Archivo <i class="fas fa-download"></i></a>
+      </div>
+    <?php } ?>
+    <?php if ($contenido->contenido_archivo && ($contenido->contenido_seccion == 18 || $contenido->contenido_seccion == 19)) { ?>
+      <div align="center" class="archivo">
+        <a class="btn-amarillo" href="/files/<?php echo $contenido->contenido_archivo ?>" target="_blank"><?php if ($contenido->contenido_vermas) { ?><?php echo $contenido->contenido_vermas; ?><?php } else { ?>Descargar Archivo <i class="fas fa-download"></i><?php } ?> </a>
+      </div>
+    <?php } ?>
+
   </div>
 </div>

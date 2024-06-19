@@ -758,6 +758,72 @@ footer .btn-primary {
  -------------------- */
 
 
+/* -------------------
+FLOTANTES INICIO
+-------------------- */
+.floating-btn {
+
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0px;
+  top: 30%;
+  z-index: 10;
+
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  /* height: 70px; */
+  border-radius: 5px 0px 0 5px;
+  background-color: var(--verde);
+  cursor: pointer;
+  padding: 10px 11px 10px 10px;
+  gap: 5px;
+}
+
+.floating-btn a {
+  color: #FFF;
+  text-decoration: none;
+  border-bottom: 1px solid #FFF;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+  display: grid;
+  place-items: center;
+}
+
+.floating-btn a:last-of-type {
+  border-bottom: 0;
+
+}
+
+.floating-btn a span {
+  font-size: 12px;
+  transition: all 300ms ease-in-out;
+
+}
+
+
+.floating-btn a img {
+  width: 35px;
+  transition: all 300ms ease-in-out;
+
+}
+
+.floating-btn a:hover img {
+  transform: scale(1.2);
+}
+
+.floating-btn a:hover span {
+  font-weight: 600;
+}
+
+
+/* -------------------
+FLOTANTES FIN
+-------------------- */
+
+
 
 /*++++++++++++++++++++++++++++++++
  HOME INICIO CONTENIDO AHORRO, CREDITOS, BENEFICIOS
@@ -1849,6 +1915,12 @@ INICIO ITEM SERVICIOS
   .item-servicios section.contenedor-seccion p span {
     font-size: 15px;
   }
+
+  .item-servicios table td {
+    /* width: 100%; */
+    display: inline-table;
+    width: 300px;
+  }
 }
 
 /*  */
@@ -1893,19 +1965,19 @@ INICIO CREDITOS
 /* .contenido-creditos section.contenedor-seccion:hover .boton .btn-azul i {
   transform: translateX(5px);
 } */
-.contenido-creditos  .boton .btn-azul:hover + .imagen-contenido-simple img {
+.contenido-creditos .boton .btn-azul:hover+.imagen-contenido-simple img {
   transform: translateY(-10px);
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 
-.contenido-creditos section.contenedor-seccion .boton .btn-azul:hover i{
+.contenido-creditos section.contenedor-seccion .boton .btn-azul:hover i {
   transform: translateX(5px);
 
 }
 
 
-.hover-container .boton .btn:hover ~ .imagen-contenido-simple img {
+.hover-container .boton .btn:hover~.imagen-contenido-simple img {
   transform: scale(1.1);
   filter: brightness(0.8);
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -2007,17 +2079,18 @@ INICIO CREDITOS
   }
 
   .contenido-creditos section.contenedor-seccion .descripcion-seccion {
-    height: 78px;
+    height: 45px;
+    padding: 0 6px;
   }
 
   .contenido-creditos section.contenedor-seccion .boton {
     padding: 0 10px 10px 10px;
   }
 
-  .contenido-creditos section.contenedor-seccion .boton .btn-amarillo {
+  .contenido-creditos section.contenedor-seccion .boton .btn-azul {
     margin: inherit;
     font-size: 14px;
-    padding: 4px 15px;
+    padding: 4px 10px;
   }
 
   .contenido-creditos section.contenedor-seccion h2:nth-child(1) {
@@ -2037,7 +2110,8 @@ INICIO CREDITOS
 
 @media (width < 576px) {}
 
-.id_101 {
+.id_101,
+.id_106 {
   width: 99% !important;
   box-shadow: none !important;
   padding: 20px 0 !important;
@@ -2045,6 +2119,19 @@ INICIO CREDITOS
 
 .id_101 .descripcion-seccion {
   height: auto !important;
+}
+
+.id_106 .descripcion-seccion {
+  all: unset;
+  padding: 0 20px;
+  height: auto !important;
+  -webkit-box-orient: inherit !important;
+  display: block !important;
+
+}
+
+.contenido-creditos section.contenedor-seccion li::marker {
+  color: var(--azul);
 }
 
 /* ********************
@@ -2058,6 +2145,569 @@ FIN  CREDITOS
 
 
 
+
+
+
+
+
+/* ********************
+INICIO ITEM CREDITOS
+****************************/
+.item-credito section.contenedor-seccion {
+  padding: 20px 0;
+}
+
+
+
+.item-credito section.contenedor-seccion .imagen-contenido-simple {
+  display: none;
+}
+
+.item-credito section.contenedor-seccion .content-box h2 {
+  margin: 20px 0;
+  font-size: calc(1.5rem + .5vw);
+}
+
+.item-credito section.contenedor-seccion .content-box .titulo-seccion {
+  margin: 20px 0;
+  font-size: calc(1.8rem + .55vw);
+}
+
+.item-credito section.contenedor-seccion .content-box .col-sm-6 h2 {
+  text-align: start;
+  font-size: calc(1.1rem + .5vw);
+
+}
+
+.item-credito section.contenedor-seccion .content-box .col-sm-6 h4 {
+  margin: 20px 0;
+  font-size: calc(1.1rem + .5vw);
+  color: var(--azul);
+  font-weight: 900;
+}
+
+.item-credito section.contenedor-seccion .descripcion-seccion p::after {
+  all: unset;
+}
+
+.item-credito section.contenedor-seccion .contenido-seccion .imagen-contenido-simple,
+.item-credito section.contenedor-seccion .contenido-seccion .boton {
+
+  display: none;
+}
+
+.item-credito table td {
+  width: 50%;
+
+}
+
+.item-credito section.contenedor-seccion .design-four .imagen-contenido img,
+.item-credito section.contenedor-seccion .design-one .imagen-contenido img,
+.item-credito section.contenedor-seccion .design-three .imagen-contenido img,
+.item-credito section.contenedor-seccion .design-five .imagen-contenido img,
+.item-credito section.contenedor-seccion .descripcion img,
+
+.item-credito section.contenedor-seccion .design-two .imagen-contenido img {
+  width: 100%;
+  object-fit: contain;
+  /* aspect-ratio: 160/147; */
+
+  margin: 0 auto;
+  display: block;
+}
+
+.id_84 .descripcion img,
+.id_84 .imagen-contenido img {
+  max-width: 160px;
+}
+
+.item-credito section.contenedor-seccion .col-sm-12 .imagen-contenido img {
+  max-width: fit-content;
+}
+
+
+.item-credito section.contenedor-seccion .design-four .descripcion h4,
+.item-credito section.contenedor-seccion .design-one .descripcion h4,
+.item-credito section.contenedor-seccion .design-two .descripcion h4 {
+  font-size: calc(1rem + .1vw);
+}
+
+.item-credito li::marker {
+  color: var(--azul);
+}
+
+@media (width < 768px) {
+
+  .item-credito section.contenedor-seccion .design-four .imagen-contenido img,
+  .item-credito section.contenedor-seccion .design-one .imagen-contenido img,
+  .item-credito section.contenedor-seccion .design-two .imagen-contenido img {
+    margin-bottom: 20px;
+  }
+
+  .item-credito section.contenedor-seccion p,
+  .item-credito section.contenedor-seccion p span {
+    font-size: 15px;
+  }
+
+  .item-credito table td {
+    /* width: 100%; */
+    display: inline-table;
+    width: 300px;
+  }
+}
+
+/*  */
+
+/* ********************
+FIN  ITEM  CREDITO
+****************************/
+
+
+
+
+
+
+
+/* ********************
+INICIO AHORRO
+****************************/
+
+:root {
+  --surface-color: #fff;
+  --curve: 20;
+}
+
+.contenido-ahorros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px 0;
+  justify-content: center;
+}
+
+.contenido-ahorros section.contenedor-seccion {
+  flex: 0 0 auto;
+  width: 31%;
+  /* box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); */
+  padding: 0;
+  /* border-radius: 14px; */
+  height: 390px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--blanco);
+  border-radius: calc(var(--curve) * 1px);
+  transition: all 300ms ease-in-out;
+
+}
+
+.contenido-ahorros section.contenedor-seccion .imagen-contenido-simple {
+  overflow: hidden;
+}
+
+.contenido-ahorros section.contenedor-seccion:hover {
+  box-shadow: 0 1px 1px 0 hsla(0, 0%, 0%, 0.1);
+}
+
+.id_111 {
+  background-color: transparent !important;
+}
+
+
+
+
+.contenido-ahorros section.contenedor-seccion .content-box {
+  padding: 0;
+}
+
+
+.contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 37/25;
+  transition: all 300ms ease-in-out;
+  /* border-radius: 14px 14px 0 0; */
+
+}
+
+.contenido-ahorros section.contenedor-seccion:hover .imagen-contenido-simple img {
+  transform: scale(1.1);
+}
+
+.contenido-ahorros section.contenedor-seccion .descripcion-seccion p::after {
+  all: unset;
+}
+
+.contenido-ahorros section.contenedor-seccion .descripcion-seccion {
+  padding: 0 20px;
+  height: 50px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transform: translateY(70px);
+  transition: all 300ms ease-in-out;
+
+}
+
+
+
+.contenido-ahorros section.contenedor-seccion:hover .descripcion-seccion {
+  transform: translateY(0);
+}
+
+.id_111:hover .descripcion-seccion {
+  transform: translateY(0) !important;
+}
+
+.id_111 .descripcion-seccion {
+  transform: translateY(0) !important;
+}
+
+.contenido-ahorros section.contenedor-seccion h2 {
+  font-size: calc(1.125rem + 0.1vw);
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7px 0;
+  padding: 0 10px;
+  transform: translateY(15px);
+  transition: all 300ms ease-in-out;
+}
+
+
+.contenido-ahorros section.contenedor-seccion:hover h2 {
+  transform: translateY(0);
+  height: 45px;
+}
+
+.id_111 h2 {
+  height: 25px !important;
+}
+
+.id_111:hover h2 {
+  transform: translateY(0) !important;
+}
+
+.contenido-ahorros section.contenedor-seccion .descripcion-seccion p {
+  font-size: 16px;
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.contenido-ahorros section.contenedor-seccion h2:nth-child(1) {
+  font-size: calc(1.825rem + 0.1vw);
+  transform: translateY(0) !important;
+}
+
+@media (width < 1492px) {
+  .contenido-ahorros section.contenedor-seccion {
+    height: 350px;
+  }
+}
+
+@media (width < 1192px) {
+  .contenido-ahorros section.contenedor-seccion {
+    height: 310px;
+  }
+}
+
+@media (width < 992px) {
+  .contenido-ahorros section.contenedor-seccion {
+    flex: 0 0 auto;
+    width: 31%;
+    height: 310px;
+  }
+
+
+
+  .contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
+    height: auto;
+  }
+}
+
+@media (width < 768px) {
+  .contenido-ahorros section.contenedor-seccion {
+    flex: 0 0 auto;
+    width: 47.5%;
+    height: 285px;
+  }
+
+  .contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
+    /* height: 167px; */
+  }
+
+  .contenido-ahorros section.contenedor-seccion .descripcion-seccion {
+    height: 45px;
+    padding: 0 6px;
+  }
+
+  .contenido-ahorros section.contenedor-seccion .boton {
+    padding: 0 10px 10px 10px;
+  }
+
+  .contenido-ahorros section.contenedor-seccion .boton .btn-azul {
+    margin: inherit;
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+
+  .contenido-ahorros section.contenedor-seccion h2:nth-child(1) {
+    font-size: calc(1.5rem + 0.1vw);
+
+  }
+
+  .contenido-ahorros section.contenedor-seccion h2 {
+    font-size: calc(1rem + 0.1vw);
+    height: 26px;
+  }
+
+  .contenido-ahorros section.contenedor-seccion .descripcion-seccion p {
+    font-size: 14px;
+  }
+
+  .contenido-ahorros section.contenedor-seccion:hover h2 {
+
+
+    height: 26px;
+
+  }
+}
+
+@media (width < 576px) {
+  .contenido-ahorros section.contenedor-seccion .descripcion-seccion {
+    transform: translateY(0px);
+  }
+
+  .contenido-ahorros section.contenedor-seccion h2 {
+    transform: translateY(0px);
+  }
+
+  .contenido-ahorros section.contenedor-seccion {
+
+    height: 235px;
+  }
+}
+
+
+.id_111 {
+  width: 99% !important;
+  box-shadow: none !important;
+  padding: 20px 0 !important;
+  height: auto !important;
+
+}
+
+
+
+.id_111 .descripcion-seccion {
+  all: unset;
+
+  height: auto !important;
+  transform: translateY(0) !important;
+
+  padding: 0 20px;
+  height: auto !important;
+  -webkit-box-orient: inherit !important;
+  display: block !important;
+
+}
+
+.contenido-ahorros section.contenedor-seccion li::marker {
+  color: var(--azul);
+}
+
+
+/* ********************
+FIN  ITEM  AHORRO
+****************************/
+
+
+
+
+
+
+
+/* ********************
+INICIO ITEM AHORRO
+****************************/
+.item-ahorro section.contenedor-seccion {
+  padding: 20px 0;
+}
+
+
+
+.item-ahorro section.contenedor-seccion .imagen-contenido-simple {
+  display: none;
+}
+
+.item-ahorro section.contenedor-seccion .content-box h2 {
+  margin: 20px 0;
+  font-size: calc(1.5rem + .5vw);
+}
+
+.item-ahorro section.contenedor-seccion .content-box .titulo-seccion {
+  margin: 20px 0;
+  font-size: calc(1.8rem + .55vw);
+}
+
+.item-ahorro section.contenedor-seccion .content-box .col-sm-6 h2 {
+  text-align: start;
+  font-size: calc(1.1rem + .5vw);
+
+}
+
+.item-ahorro section.contenedor-seccion .content-box .col-sm-6 h4 {
+  margin: 20px 0;
+  font-size: calc(1.1rem + .5vw);
+  color: var(--azul);
+  font-weight: 900;
+}
+
+.item-ahorro section.contenedor-seccion .descripcion-seccion p::after {
+  all: unset;
+}
+
+.item-ahorro section.contenedor-seccion .contenido-seccion .imagen-contenido-simple,
+.item-ahorro section.contenedor-seccion .contenido-seccion .boton {
+
+  display: none;
+}
+
+.item-ahorro table td {
+  width: 50%;
+
+}
+
+.item-ahorro section.contenedor-seccion .design-four .imagen-contenido img,
+.item-ahorro section.contenedor-seccion .design-one .imagen-contenido img,
+.item-ahorro section.contenedor-seccion .design-three .imagen-contenido img,
+.item-ahorro section.contenedor-seccion .design-five .imagen-contenido img,
+.item-ahorro section.contenedor-seccion .descripcion img,
+
+.item-ahorro section.contenedor-seccion .design-two .imagen-contenido img {
+  width: 100%;
+  object-fit: contain;
+  /* aspect-ratio: 160/147; */
+
+  margin: 0 auto;
+  display: block;
+}
+
+.item-ahorro section.contenedor-seccion .col-sm-12 .imagen-contenido img {
+  max-width: fit-content;
+}
+
+
+.item-ahorro section.contenedor-seccion .design-four .descripcion h4,
+.item-ahorro section.contenedor-seccion .design-one .descripcion h4,
+.item-ahorro section.contenedor-seccion .design-two .descripcion h4 {
+  font-size: calc(1rem + .1vw);
+}
+
+.item-ahorro li::marker {
+  color: var(--azul);
+}
+
+.item-ahorro section.contenedor-seccion .tarjeta {
+  position: relative;
+  margin: 0 auto;
+  border: 3px solid #eee;
+  border-radius: 5px;
+  background-color: #fff;
+  padding-bottom: 44px;
+  overflow: hidden;
+  border-color: var(--azul);
+  max-width: 300px;
+}
+
+.item-ahorro section.contenedor-seccion .tarjeta-header {
+  text-align: center;
+  background: #f6f9ff;
+  padding: 53px 30px 34px;
+}
+
+.tarjeta-titulo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  color: var(--azul);
+}
+
+.tarjeta-titulo .porcentaje {
+  font-size: 24px;
+  color: inherit;
+  font-weight: 700;
+}
+
+.tarjeta-titulo .numero {
+  font-size: 60px;
+  font-weight: 700;
+  color: inherit;
+  line-height: .7;
+  margin-left: 4px;
+  margin-right: 4px;
+  letter-spacing: 0em;
+  font-family: 'TitilliumWeb Bold';
+
+}
+
+.tarjeta-header h5{
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 700;
+
+}
+.tarjeta-header h6{
+  font-size: 15px;
+  font-weight: 700;
+  color: inherit;
+  color: #777;
+}
+.tarjeta-body {
+  padding: 25px 35px 0;
+}
+
+.tarjeta-body li {
+  position: relative;
+  /* display: block; */
+  padding: 12px 0 12px 12px;
+}
+
+.tarjeta-body li+li {
+  border-top: 1px solid #eee;
+}
+
+
+@media (width < 768px) {
+
+  .item-ahorro section.contenedor-seccion .design-four .imagen-contenido img,
+  .item-ahorro section.contenedor-seccion .design-one .imagen-contenido img,
+  .item-ahorro section.contenedor-seccion .design-two .imagen-contenido img {
+    margin-bottom: 20px;
+  }
+
+  .item-ahorro section.contenedor-seccion p,
+  .item-ahorro section.contenedor-seccion p span {
+    font-size: 15px;
+  }
+
+  .item-ahorro table td {
+    /* width: 100%; */
+    display: inline-table;
+    width: 300px;
+  }
+}
+
+/*  */
+
+/* ********************
+FIN  ITEM  CREDITO
+****************************/
 
 
 

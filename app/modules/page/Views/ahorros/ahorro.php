@@ -1,8 +1,8 @@
-<div class="container item-credito">
+<div class="container item-ahorro">
   <?php
   echo $this->contenido;
   ?>
- 
+
 </div>
 <style>
   .main-general {

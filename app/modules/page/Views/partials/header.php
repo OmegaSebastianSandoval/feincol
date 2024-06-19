@@ -82,7 +82,7 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                         Portafolio
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item <?php echo $this->botonactivo == 19 ? 'active' : '' ?>" href="#">Ahorros</a></li>
+                        <li><a class="dropdown-item <?php echo $this->botonactivo == 19 ? 'active' : '' ?>" href="/page/ahorros">Ahorros</a></li>
                         <li><a class="dropdown-item <?php echo $this->botonactivo == 20 ? 'active' : '' ?>" href="/page/creditos">Créditos</a></li>
                         <li><a class="dropdown-item <?php echo $this->botonactivo == 21 ? 'active' : '' ?>" href="/page/servicios">Servicios de previsión</a></li>
 

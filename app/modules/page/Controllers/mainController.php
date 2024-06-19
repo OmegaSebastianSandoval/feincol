@@ -30,10 +30,10 @@ class Page_mainController extends Controllers_Abstract
 		$this->_view->isActiveInicio = $this->isActiveInicio();
 
 
-		$modalModel = new Page_Model_DbTable_Publicidad();
-		$this->_view->popup = $modalModel->getList("publicidad_seccion='101' AND publicidad_estado=1", "")[0];
+		$publicidadModel = new Page_Model_DbTable_Publicidad();
+		$this->_view->popup = $publicidadModel->getList("publicidad_seccion='101' AND publicidad_estado=1", "")[0];
 		
-
+		$this->_view->botonesFlotantes = $publicidadModel->getList("publicidad_seccion='100' AND publicidad_estado='1'", "orden ASC");
 
 		$informacion = $infopageModel->getById(1);
 		$this->_view->infopage = $informacion;
