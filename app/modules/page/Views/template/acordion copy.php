@@ -96,25 +96,27 @@
 	</div>
 
 <?php } else { ?>
-	<div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="accordion my-3 " id="accordion<?php echo $columna->contenido_id; ?>">
+
+	<div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="accordion " id="accordion<?php echo $columna->contenido_id; ?>">
 
 		<?php foreach ($acordioncontent as $key3 => $acordion) : ?>
 
 			<?php $acordion = $acordion["nietos"]; ?>
-			<div class="accordion-item">
-				<h2 class="accordion-header">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $acordion->contenido_id; ?>" aria-expanded="true" aria-controls="collapse<?php echo $acordion->contenido_id; ?>">
-						<?php echo $acordion->contenido_titulo; ?>
 
-					</button>
-				</h2>
-				<div id="collapse<?php echo $acordion->contenido_id; ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-					<div class="accordion-body">
-						<?php if ($acordion->contenido_imagen) { ?>
-							<div class="imagen-contenido">
-								<div><img src="/images/<?php echo $acordion->contenido_imagen; ?>"></div>
-							</div>
-						<?php } ?>
+			<div class="card w-100">
+				<div class="card-header" id="heading<?php echo $acordion->contenido_id; ?>" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $acordion->contenido_id; ?>" <?php if ($key3 == 0) { ?> aria-expanded="true" <?php } ?> aria-controls="collapse<?php echo $acordion->contenido_id; ?>">
+					<?php if ($acordion->contenido_imagen) { ?>
+						<img src="/images/<?php echo $acordion->contenido_imagen; ?>" style="max-width: 50px" class="mr-2">
+					<?php } ?>
+					<?php echo $acordion->contenido_titulo; ?>
+				</div>
+				<div id="collapse<?php echo $acordion->contenido_id; ?>" class="collapse " aria-labelledby="heading<?php echo $acordion->contenido_id; ?>" data-parent="#accordion<?php echo $columna->contenido_id; ?>">
+					<div class="card-body">
+						<!-- <?php if ($acordion->contenido_imagen) { ?>
+						<div class="imagen-contenido">
+							<div><img src="/images/<?php echo $acordion->contenido_imagen; ?>"></div>
+						</div>
+					<?php } ?> -->
 						<div>
 							<div class="descripcion">
 								<?php echo $acordion->contenido_descripcion; ?>
@@ -128,10 +130,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
 		<?php endforeach ?>
 	</div>
 <?php } ?>

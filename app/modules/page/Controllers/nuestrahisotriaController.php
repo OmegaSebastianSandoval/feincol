@@ -6,7 +6,7 @@ class Page_nuestrahisotriaController extends Page_mainController
 
   public function indexAction()
   {
-    $this->_view->banner = $this->template->banner(7);
-    $this->_view->contenido = $this->template->getContentseccion(7);
+    $this->_view->banner = $this->template->banner(10);
+    $this->_view->contenido = $this->template->getContentseccion(10);
     }
 }

@@ -14,26 +14,25 @@ function resaltarTexto($cadena)
 <div class="floating-btn">
 
 
-<?php foreach ($this->botonesFlotantes as $key => $boton) { ?>
+    <?php foreach ($this->botonesFlotantes as $key => $boton) { ?>
+        <a href="<?php echo $boton->publicidad_enlace ?>" target="<?php echo $boton->publicidad_tipo_enlace == 1 ? '_blank' : '' ?>" style="background: <?php echo $boton->publicidad_color_fondo ?>;" class="<?php echo $boton->publicidad_posicion ?>">
+            <?php if ($boton->publicidad_texto_enlace) { ?>
+                <span>
+                    <?php echo $boton->publicidad_texto_enlace ?>
+                </span>
+            <?php } ?>
 
-    <a href="<?php echo $boton->publicidad_enlace ?>"
-        target="<?php echo $boton->publicidad_tipo_enlace == 1 ? '_blank' : '' ?>">
-        <?php if ($boton->publicidad_imagen) { ?>
-            <img src="/images/<?php echo $boton->publicidad_imagen ?>" alt="floating button">
-        <?php } ?>
-
-        <?php if ($boton->publicidad_nombre) { ?>
-            <span>
-                <?php echo $boton->publicidad_nombre ?>
-            </span>
-        <?php } ?>
+            <?php if ($boton->publicidad_imagen) { ?>
+                <img src="/images/<?php echo $boton->publicidad_imagen ?>" alt="floating button">
+            <?php } ?>
 
 
-    </a>
-    <!--      <a href="/page/programacion/reserva">
+
+        </a>
+        <!--      <a href="/page/programacion/reserva">
     <img src="/skins/page/images/GCL_reserva.png" alt="floating button">
 </a> -->
-<?php } ?>
+    <?php } ?>
 </div>
 
 <div class="loader-bx">
@@ -107,7 +106,8 @@ function resaltarTexto($cadena)
 
 <?php
 
-function replaceBracketsWithSpan(string $text): string {
+function replaceBracketsWithSpan(string $text): string
+{
     return preg_replace_callback(
         '/\[(.*?)\]/',
         function ($matches) {
@@ -146,7 +146,7 @@ function replaceBracketsWithSpan(string $text): string {
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style=" border: none;
     background-color: transparent;">
-            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1);"></button>
                 <div class="modal-body">
                     <?php if ($this->popup->publicidad_video != "") { ?>
                         <div class="fondo-video-youtube">
@@ -169,4 +169,3 @@ function replaceBracketsWithSpan(string $text): string {
 
 
 <?php } ?>
-

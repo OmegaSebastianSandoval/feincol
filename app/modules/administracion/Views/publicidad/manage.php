@@ -18,6 +18,7 @@
                         </div>
                         <script>
                             cambiar_contenido()
+
                             function cambiar_contenido() {
                                 if (document.getElementById('publicidad_seccion').value.trim() != 100) {
                                     document.getElementById('contenedor-posicion').style.display = "none";
@@ -33,8 +34,7 @@
                             <?php foreach ($this->list_publicidad_seccion as $key => $value) { ?>
                                 <option <?php if ($this->getObjectVariable($this->content, "publicidad_seccion") == $key) {
                                             echo "selected";
-                                        } ?> value="
-                                <?php echo $key; ?>" />
+                                        } ?> value=" <?php echo $key; ?>" />
                                 <?= $value; ?>
                                 </option>
                             <?php } ?>
@@ -67,7 +67,7 @@
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="col-3 form-group">
-                    <label class="control-label">Mostrar info</label>
+                    <label class="control-label" id="label-mostrar">Mostrar info</label>
                     <br>
                     <input type="checkbox" name="mostrarinfo" value="1" class="form-control switch-form" <?php if ($this->getObjectVariable($this->content, 'mostrarinfo') == 1) {
                                                                                                                 echo "checked";
@@ -75,20 +75,22 @@
                     <div class="help-block with-errors"></div>
                 </div>
                 <div id="contenedor-posicion" class="col-3 form-group no-banner no-carrousel no-acordion si-seccion" style="display: none;">
-					<label class="control-label " >Poiscion</label>
-					<label class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text input-icono  fondo-verde " ><i class="fas fa-align-center"></i></span>
-						</div>
-						<select class="form-control" name="publicidad_posicion"   >
-							<option value="">Seleccione...</option>
-							<?php foreach ($this->list_publicidad_posicion AS $key => $value ){?>
-								<option <?php if($this->getObjectVariable($this->content,"publicidad_posicion") == $key ){ echo "selected"; }?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
-							<?php } ?>
-						</select>
-					</label>
-					<div class="help-block with-errors"></div>
-				</div>
+                    <label class="control-label ">Poiscion</label>
+                    <label class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text input-icono  fondo-verde "><i class="fas fa-align-center"></i></span>
+                        </div>
+                        <select class="form-control" name="publicidad_posicion">
+                            <option value="">Seleccione...</option>
+                            <?php foreach ($this->list_publicidad_posicion as $key => $value) { ?>
+                                <option <?php if ($this->getObjectVariable($this->content, "publicidad_posicion") == $key) {
+                                            echo "selected";
+                                        } ?> value="<?php echo $key; ?>" /> <?= $value; ?></option>
+                            <?php } ?>
+                        </select>
+                    </label>
+                    <div class="help-block with-errors"></div>
+                </div>
 
                 <!--  <div class="col-6 form-group">
                         <label for="publicidad_imagen">Imagen</label>

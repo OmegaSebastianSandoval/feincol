@@ -168,11 +168,14 @@ class Administracion_contenidoController extends Administracion_mainController
       $this->_view->tipo = 20;
     } else if ($contentpadre->contenido_tipo == 20) {
       $this->_view->tipo = 21;
+    }else if ($contentpadre->contenido_tipo == 23) {
+      $this->_view->tipo = 24;
     }
     if ($contentpadre->contenido_seccion) {
       $this->_view->seccion = $contentpadre->contenido_seccion;
     }
     $this->_view->padre = $padre;
+    // print_r($padre);
     $this->_view->contentpadre = $contentpadre;
     $this->_view->list_contenido_tipo = $this->getContenidotipo($padre);
   }
@@ -473,6 +476,7 @@ class Administracion_contenidoController extends Administracion_mainController
       $array['6'] = 'Carrousel';
       $array['7'] = 'Acordion';
       $array['8'] = 'Slider';
+      $array['23'] = 'Time Line';
     } else if ($padre->contenido_tipo == 8) {
       $array['10'] = 'itemSlider';
     }

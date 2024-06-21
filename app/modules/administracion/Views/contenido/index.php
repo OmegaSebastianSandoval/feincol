@@ -141,6 +141,9 @@
 									<?php if ($content->contenido_tipo == 6 || $content->contenido_tipo == 7 || $content->contenido_tipo == 8) { ?>
 										<a class="btn btn-rosado btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>&page=1" data-bs-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
 									<?php } ?>
+									<?php if ($content->contenido_tipo == 23) { ?>
+										<a class="btn btn-cafe btn-sm" href="<?php echo $this->route; ?>?padre=<?= $id ?>" data-toggle="tooltip" data-placement="top" title="Elementos"><i class="fas fa-plus-square"></i></a>
+									<?php } ?>
 									<a class="btn btn-azul btn-sm" href="<?php echo $this->route; ?>/manage?id=<?= $id ?>" data-bs-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-pen-alt"></i></a>
 
 									<?php if ($_SESSION['kt_login_level'] == 1) { ?><span data-bs-toggle="tooltip" data-placement="top" title="Eliminar"><a class="btn btn-rojo btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?php echo $id ?>"><i class="fas fa-trash-alt"></i></a></span><?php } ?>

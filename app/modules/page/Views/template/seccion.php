@@ -93,12 +93,15 @@
 				||
 				(is_countable($rescontenido['hijos']) && count($rescontenido['hijos']) > 0 && $contenedor->contenido_seccion == 20 && $contenedor->mostrar == 1)
 			) {
-
 			?>
 				<div class="row <?php if ($contenedor->contenido_columna_alineacion == 2) { ?>justify-content-center text-center<?php } else if ($contenedor->contenido_columna_alineacion == 3) { ?> justify-content-end text-right<?php } else { ?> justify-content-start text-left<?php } ?> <?php if ($contenedor->contenido_columna_espacios == 2 || $contenedor->contenido_columna_espacios == 4) { ?> no-gutters <?php } ?>">
 
 					<?php foreach ($rescontenido['hijos'] as $key => $rescolumna) : ?>
-						<?php $columna = $rescolumna['detalle']; ?>
+						<?php
+						$columna = $rescolumna['detalle']; 
+						// print_r($columna);
+						?>
+
 						<div class="<?php echo $columna->contenido_columna; ?>">
 							<?php if ($columna->contenido_tipo == 5) { ?>
 								<?php $contenido = $columna; ?>
@@ -137,6 +140,9 @@
 							<?php } else if ($columna->contenido_tipo == 8) { ?>
 								<?php $slidercontent = $rescolumna['hijos']; ?>
 								<?php include(APP_PATH . "modules/page/Views/template/slider.php"); ?>
+							<?php } else if ($columna->contenido_tipo == 23) { ?>
+								<?php $fechas = $rescolumna['hijos']; ?>
+								<?php include(APP_PATH . "modules/page/Views/template/time-line.php"); ?>
 							<?php } ?>
 						</div>
 					<?php endforeach ?>

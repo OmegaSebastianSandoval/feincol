@@ -1,12 +1,13 @@
 <?php
 echo $this->banner;
 ?>
-
-<?php
-echo $this->contenido;
-?>
+<div class="contenido-normatividad">
+  <?php
+  echo $this->contenido;
+  ?>
+</div>
 <style>
-  .main-general{
+  .main-general {
     background-color: #f7f7f7;
   }
 </style>
