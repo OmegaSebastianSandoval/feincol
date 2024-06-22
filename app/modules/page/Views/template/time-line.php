@@ -16,10 +16,10 @@
             <?php $fecha = $fecha["nietos"] ?>
             <div class="row timeline-movement">
                 <div class="d-flex justify-content-center">
-                <p class="title"> </p>
+                    <p class="title"> </p>
                     <!-- <div class="timeline-badge <?php if ($key % 2 == 0) {
-                                                    echo 'left';
-                                                } ?>">
+                                                        echo 'left';
+                                                    } ?>">
 
                     </div> -->
                 </div>
@@ -74,7 +74,7 @@
         <?php } ?>
     </div>
 </div>
-<!-- <div class="container d-sm-none d-flex pl-5 justify-content-center flex-column">
+<div class="container d-sm-none d-flex pl-5 justify-content-center flex-column">
     <?php foreach ($fechas as $key => $fecha) { ?>
         <?php $fecha = $fecha["nietos"] ?>
 
@@ -82,10 +82,10 @@
             <div class="row no-margen">
                 <div class="col-sm-10 timeline-col p-0">
                     <div class="row timeline-panel credits d-flex justify-content-end">
-                        <div class="col-sm-6 p-0">
-                            <li class="itemLine itemLineLeft p-3 py-4" style="background-color: <?php echo $fecha->contenido_fondo_color; ?> ;">
-                                <button style="background: transparent;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_<?php echo $fecha->contenido_id ?>">
-                                    <img src="/images/<?php echo $fecha->contenido_imagen; ?>" alt="">
+                        <div class="col-sm-6 p-md-0">
+                            <li class="itemLine itemLineRight" style="background-color: <?php echo $fecha->contenido_fondo_color; ?> ;">
+                                <button style="background: transparent;" type="button" class="btn-clean p-3" data-bs-toggle="modal" data-bs-target="#modal_<?php echo $fecha->contenido_id ?>">
+                                    <!-- <img src="/images/<?php echo $fecha->contenido_imagen; ?>" alt=""> -->
                                     <h3 class="timeline-balloon-date-day"><?php echo $fecha->contenido_titulo ?></h3>
                                 </button>
                             </li>
@@ -96,7 +96,7 @@
             </div>
         </div>
     <?php } ?>
-</div> -->
+</div>
 <?php foreach ($fechas as $key => $fecha) : ?>
     <?php $fecha = $fecha["nietos"] ?>
 
@@ -111,6 +111,7 @@
 
                 </div>
                 <div class="modal-body" style="color: #fff;">
+                    <img class="mx-auto w-100 d-block" src="/images/<?php echo $fecha->contenido_imagen; ?>" alt="">
                     <p><?php echo $fecha->contenido_descripcion ?></p>
                 </div>
 

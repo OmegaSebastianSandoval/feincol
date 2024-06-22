@@ -4,6 +4,8 @@ echo $this->banner;
 <div class="contenido-normatividad">
   <?php
   echo $this->contenido;
+  echo $this->nuestrosAliados;
+
   ?>
 </div>
 <style>

@@ -8,5 +8,7 @@ class Page_normatividadController extends Page_mainController
   {
     $this->_view->banner = $this->template->banner(11);
     $this->_view->contenido = $this->template->getContentseccion(11);
+    $this->_view->nuestrosAliados = $this->template->getContentseccionById(15);
+
     }
 }

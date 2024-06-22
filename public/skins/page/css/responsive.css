@@ -177,6 +177,27 @@ FOOTER FIN
     }
 
 
+    .contenedor-seccion{
+        padding: 25px 0;
+    }
+ /* -------------------
+  DOCUMENTOS INCIIO
+  -------------------- */
+  .docs-container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .docs-container .docs-header h3 {
+    font-size: calc(1.125rem + .6vw);
+  }
+  .docs-container .items-docs-row .doc-item-file h4{
+    font-size: calc(1rem + .3vw);
+
+  }
+ /* -------------------
+  DOCUMENTOS FIN
+  -------------------- */
+
 }
 
 
