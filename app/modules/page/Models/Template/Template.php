@@ -210,7 +210,7 @@ class Page_Model_Template_Template
 	{
 		$contenidoModel = new Page_Model_DbTable_Contenido();
 		$contenidos = [];
-		$rescontenidos = $contenidoModel->getList("contenido_estado='1' AND  contenido_id = '$id' ", "orden ASC");
+		$rescontenidos = $contenidoModel->getList("contenido_id = '$id' ", "orden ASC");
 		foreach ($rescontenidos as $key => $contenido) {
 			$contenidos[$key] = [];
 			$contenidos[$key]['detalle'] = $contenido; 

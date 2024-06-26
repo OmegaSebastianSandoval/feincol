@@ -48,11 +48,11 @@
   <script src="/components/aos-master/dist/aos.js"></script>
 
   <!-- metacolor -->
-	<meta name="theme-color" content="#192a4b">
+  <meta name="theme-color" content="#192a4b">
 
-	<!-- CounterUp -->
-	<script src="/components/WayPoints/lib/jquery.waypoints.js"></script>
-	<script src="/components/CounterUp/jquery.counterup.min.js"></script>
+  <!-- CounterUp -->
+  <script src="/components/WayPoints/lib/jquery.waypoints.js"></script>
+  <script src="/components/CounterUp/jquery.counterup.min.js"></script>
 
   <!-- SweetAlert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -65,6 +65,10 @@
   <!-- Main Js -->
   <script src="/skins/page/js/main.js?v=2"></script>
 
+  <!-- FANCYBOX -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  
   <!-- Recaptcha -->
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <meta name="description" content="<?= $this->_data['meta_description']; ?>" />

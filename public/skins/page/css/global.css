@@ -3039,7 +3039,12 @@ FIN LINEA DE TIEMPO
 /* ********************
 INICIO NUESTRO FONDO
 *************************** */
-.contenedor-nuestrofondo {}
+.contenedor-tab {}
+
+.contenedor-tab .contenedor-seccion{
+  padding:  15px 0 !important;
+}
+
 
 .fondo-titulo {
   background-color: var(--azul);
@@ -3052,7 +3057,7 @@ INICIO NUESTRO FONDO
   margin: 0;
 }
 
-.contenedor-nuestrofondo .nav-link {
+.contenedor-tab .nav-link {
   background-color: #f2f2f2 !important;
   border: 0;
   border-bottom: 1px solid var(--gris-claro);
@@ -3068,36 +3073,43 @@ INICIO NUESTRO FONDO
 
 
 }
-.contenedor-nuestrofondo .nav-link i{
-color: var(--amarillo);
+
+.contenedor-tab .nav-link i {
+  color: var(--amarillo);
 }
-.contenedor-nuestrofondo .nav-link.active {
+
+.contenedor-tab .nav-link.active {
   color: var(--azul) !important;
 }
-.id_141 .descripcion{
+
+.id_141 .descripcion {
   color: var(--blanco);
   font-weight: 600;
 }
 
-:is(.id_134, .id_135, .id_138 ){
+:is(.id_134, .id_135, .id_138) {
   padding-block: 10px !important;
 }
-:is(.id_134, .id_135, .id_138 ) .titulo-seccion{
+
+:is(.id_134, .id_135, .id_138) .titulo-seccion {
   margin-bottom: 20px !important;
 }
-.id_135 .titulo-seccion{
+
+.id_135 .titulo-seccion {
   text-align: start !important;
 }
 
-:is(.id_134, .id_135, .id_138 ) .descripcion h4{
+:is(.id_134, .id_135, .id_138) .descripcion h4 {
   color: var(--azul);
   font-size: 1.3rem;
   font-weight: 600;
 }
-.id_135 .container{
+
+.id_135 .container {
   border-bottom: 1px solid var(--gris-claro);
   padding-bottom: 20px;
 }
+
 .id_135 .titulo-seccion::after {
   content: "";
   display: block;
@@ -3107,20 +3119,22 @@ color: var(--amarillo);
   margin-right: auto;
   padding: 5px 0;
 }
-.id_141 h3 .counter{
+
+.id_141 h3 .counter {
   font-family: 'TitilliumWeb Bold';
   font-weight: 900;
 
 }
 
-.id_141 h3 span:nth-child(2){
-position: absolute;
+.id_141 h3 span:nth-child(2) {
+  position: absolute;
 }
-.id_141 p{
+
+.id_141 p {
   margin: 0;
 }
 
-.four-139 iframe{
+.four-139 iframe {
   aspect-ratio: 16/9;
   width: 100% !important;
   height: 100% !important;
@@ -3132,6 +3146,77 @@ FIN NUESTRO FONDO
 *************************** */
 
 
+/* ********************
+INICIO CUMPLEAÑOS
+*************************** */
+
+.id_145 .descripcion-seccion::after {
+  all: unset;
+}
+
+.id_145 .descripcion-seccion img {
+  max-width: 700px;
+  margin-inline: auto;
+  display: block;
+}
+
+/* ********************
+FIN CUMPLEAÑOS
+*************************** */
+
+
+
+/* ********************
+INICIO  PROXIMOS EVENPOS
+*************************** */
+.contenido-proximoseventos .imagen-contenido img {
+  width: 100%;
+  display: block;
+  margin-inline: auto;
+  max-width: 1000px;
+  max-height: 400px;
+  object-fit: contain;
+}
+.contenido-proximoseventos .caja-contenido-simple{
+  margin-bottom: 20px;
+}
+
+.contenido-proximoseventos .caja-contenido-simple h2{
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  /* color: var(--azul); */
+}
+/* ********************
+FIN  PROXIMOS EVENPOS
+*************************** */
+
+
+
+
+/* ********************
+INICIO GALERIA
+*************************** */
+.contenedor-galeria{
+  padding-bottom: 15px;
+}
+.contenedor-galeria .col{
+  margin-bottom: 20px;
+}
+.contenedor-galeria .portada{
+  border-radius: 10px;
+  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  cursor: pointer;
+}
+.contenedor-galeria .portada:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 1px 5px 0 hsla(0, 0%, 0%, 0.8);
+
+}
+
+
+/* ********************
+FIN GALERIA
+*************************** */
 
 
 

@@ -28,6 +28,8 @@ class Page_mainController extends Controllers_Abstract
 		$this->_view->isActivePortafolio = $this->isActivePortafolio();
 		$this->_view->isActiveEscribenos = $this->isActiveEscribenos();
 		$this->_view->isActiveInicio = $this->isActiveInicio();
+		$this->_view->isActiveNovedades = $this->isActiveNovedades();
+
 
 
 		$publicidadModel = new Page_Model_DbTable_Publicidad();
@@ -78,6 +80,11 @@ class Page_mainController extends Controllers_Abstract
 	public function isActiveInicio() {
         $activeButtons = [2, 11,12, 13, 14]; // Agrega todos los números que pueden activar el botón aquí
         return $activeButtons ;
+    }	
+	public function isActiveNovedades() {
+        $activeButtons = [23, 24,25, 26, 27]; // Agrega todos los números que pueden activar el botón aquí
+        return $activeButtons ;
     }
+
 
 } 

@@ -332,6 +332,13 @@ class Administracion_publicidadController extends Administracion_mainController
     $array['19'] = 'Ahorros';
     $array['20'] = 'Créditos';
     $array['21'] = 'Nuestro Fondo';
+    $array['22'] = 'Notas de interés';
+    $array['23'] = 'Cumpleaños';
+    $array['24'] = 'Próximos eventos';
+    $array['25'] = 'Novedades';
+    $array['26'] = 'Galería';
+
+
 
 
 

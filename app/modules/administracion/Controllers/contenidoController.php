@@ -278,6 +278,8 @@ class Administracion_contenidoController extends Administracion_mainController
       $data['log_tipo'] = 'EDITAR CONTENIDO';
       $logModel = new Administracion_Model_DbTable_Log();
       $logModel->insert($data);
+
+     
     }
     $rutaadicional = "";
     $padre = $this->_getSanitizedParam("contenido_padre");
@@ -443,6 +445,13 @@ class Administracion_contenidoController extends Administracion_mainController
     $array['19'] = 'Ahorros';
     $array['20'] = 'Créditos';
     $array['21'] = 'Nuestro Fondo';
+    $array['22'] = 'Notas de interés';
+    $array['23'] = 'Cumpleaños';
+    $array['24'] = 'Próximos eventos';
+    $array['25'] = 'Novedades';
+    $array['26'] = 'Galería';
+
+
 
 
 

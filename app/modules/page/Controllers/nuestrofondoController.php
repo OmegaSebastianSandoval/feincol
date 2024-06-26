@@ -13,10 +13,14 @@ class Page_nuestrofondoController extends Page_mainController
     $opcionesLateral = $contenidoModel->getList("","orden ASC");
 
     $this->_view->contenidoQuienesSomos = $this->template->getContentseccion(8);
+    $this->_view->contador = $this->template->getContentseccionById(141);
+
+
 
     $this->_view->contenidoNuestraHistoria = $this->template->getContentseccion(10);
 
     $this->_view->contenidoNormatividad = $this->template->getContentseccion(11);
+    
     $this->_view->nuestrosAliados = $this->template->getContentseccionById(15);
 
   }

@@ -44,6 +44,7 @@
 $isActivePortafolio = in_array($this->botonactivo, $this->isActivePortafolio);
 $isActiveEscribenos = in_array($this->botonactivo, $this->isActiveEscribenos);
 $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
+$isActiveNovedades = in_array($this->botonactivo, $this->isActiveNovedades);
 
 
 ?>
@@ -82,6 +83,24 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle <?php echo $isActiveNovedades ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Novedades
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 24 ? 'active' : '' ?>" href="/page/notasinteres">Notas de interés</a></li>
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 25 ? 'active' : '' ?>" href="/page/cumpleaos">Cumpleaños</a></li>
+
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 26 ? 'active' : '' ?>" href="/page/proximoseventos">Próximos eventos</a></li>
+                        <li><a class="dropdown-item  <?php echo $this->botonactivo == 27 ? 'active' : '' ?>" href="/page/galeria">Galería</a></li>
+                    </ul>
+                </li>
+                <div class="vr"></div>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $this->botonactivo == 23 ? 'active' : '' ?>" href="/page/novedades">Novedades</a>
+                </li>
+
+                <div class="vr"></div>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php echo $isActivePortafolio ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Portafolio
                     </a>
@@ -103,11 +122,7 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
                 <li class="nav-item">
                     <a class="nav-link <?php echo $this->botonactivo == 4 ? 'active' : '' ?>" href="/page/felicidad">Felicidad</a>
                 </li>
-                <div class="vr"></div>
 
-                <li class="nav-item">
-                    <a class="nav-link <?php echo $this->botonactivo == 16 ? 'active' : '' ?>" href="#">Novedades</a>
-                </li>
                 <div class="vr"></div>
 
                 <li class="nav-item d-none">

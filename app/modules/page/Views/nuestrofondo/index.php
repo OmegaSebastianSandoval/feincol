@@ -12,7 +12,7 @@ echo $this->banner;
 
   </div>
 </section>
-<div class="container contenedor-nuestrofondo py-4">
+<div class="container contenedor-tab py-4">
 
   <div class="d-flex align-items-start">
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -24,35 +24,82 @@ echo $this->banner;
     </div>
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-quienessomos" role="tabpanel" aria-labelledby="v-pills-quienessomos-tab" tabindex="0">
-      <?php echo $this->contenidoQuienesSomos; ?>
+        <?php echo $this->contenidoQuienesSomos; ?>
 
       </div>
-      <div class="tab-pane fade" id="v-pills-organigrama" role="tabpanel" aria-labelledby="v-pills-organigrama-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="v-pills-organigrama" role="tabpanel" aria-labelledby="v-pills-organigrama-tab" tabindex="0">
+
+      </div>
       <!-- <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">...</div> -->
       <div class="tab-pane fade" id="v-pills-nuestrahistoria" role="tabpanel" aria-labelledby="v-pills-nuestrahistoria-tab" tabindex="0">
         <?php echo $this->contenidoNuestraHistoria; ?>
       </div>
       <div class="tab-pane fade" id="v-pills-normatividad" role="tabpanel" aria-labelledby="v-pills-normatividad-tab" tabindex="0">
-        <?php echo $this->contenidoNormatividad; ?>
-        <?php echo $this->nuestrosAliados; ?>
+        <div class="w-100">
+
+          <?php echo $this->contenidoNormatividad;
+          ?>
+          <?php
+          // echo $this->nuestrosAliados;
+          ?>
+        </div>
+
 
       </div>
+
     </div>
   </div>
-  <style>
-    .main-general {
-      background-color: #f7f7f7;
+
+</div>
+<div id="mostrar-quienessomos" class="mostrar-quienessomos">
+  <?php echo $this->contador; ?>
+</div>
+<div id="mostrar-normatividad" class="mostrar-normatividad d-none">
+  <?php echo $this->nuestrosAliados; ?>
+</div>
+
+<style>
+  .main-general {
+    background-color: #f7f7f7;
+  }
+
+  h2 {
+
+    font-weight: 900 !important;
+    font-size: 2rem !important;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabQuienesSomos = document.getElementById('v-pills-quienessomos-tab');
+    const tabNormatividad = document.getElementById('v-pills-normatividad-tab');
+    const tabs = document.querySelectorAll('[data-bs-toggle="pill"]');
+
+    const mostrarQuienesSomos = document.getElementById('mostrar-quienessomos');
+    const mostrarNormatividad = document.getElementById('mostrar-normatividad');
+
+    // Función para mostrar/ocultar secciones
+    function toggleSections(activeTabId) {
+      if (activeTabId === 'v-pills-quienessomos-tab') {
+        mostrarQuienesSomos.classList.remove('d-none');
+        mostrarNormatividad.classList.add('d-none');
+      } else if (activeTabId === 'v-pills-normatividad-tab') {
+        mostrarNormatividad.classList.remove('d-none');
+        mostrarQuienesSomos.classList.add('d-none');
+      } else {
+        mostrarQuienesSomos.classList.add('d-none');
+        mostrarNormatividad.classList.add('d-none');
+      }
     }
 
-    h2 {
-
-      font-weight: 900 !important;
-      font-size: 2rem !important;
-    }
-  </style>
-  <!-- <script>
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
+    // Escuchar eventos de cambio de pestaña
+    tabs.forEach(tab => {
+      tab.addEventListener('show.bs.tab', function() {
+        toggleSections(tab.id);
+      });
     });
+
+    // Mostrar la sección "Quienes Somos" por defecto al cargar la página
+    toggleSections('v-pills-quienessomos-tab');
+  });
 </script>
- -->
