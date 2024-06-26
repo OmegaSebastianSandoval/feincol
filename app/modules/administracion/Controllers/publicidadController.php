@@ -331,6 +331,7 @@ class Administracion_publicidadController extends Administracion_mainController
     $array['18'] = 'Servicios';
     $array['19'] = 'Ahorros';
     $array['20'] = 'Créditos';
+    $array['21'] = 'Nuestro Fondo';
 
 
 

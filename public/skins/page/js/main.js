@@ -82,6 +82,10 @@ document.addEventListener("scroll", () => {
   }
 });
 document.addEventListener("DOMContentLoaded", () => {
+  $('.counter').counterUp({
+    delay: 10,
+    time: 1000
+});
   /* $(document).ajaxStart(function () {
     $(".loader-bx").addClass("show");
   });

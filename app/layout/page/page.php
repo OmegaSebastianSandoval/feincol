@@ -47,7 +47,12 @@
   <link rel="stylesheet" href="/components/aos-master/dist/aos.css">
   <script src="/components/aos-master/dist/aos.js"></script>
 
+  <!-- metacolor -->
+	<meta name="theme-color" content="#192a4b">
 
+	<!-- CounterUp -->
+	<script src="/components/WayPoints/lib/jquery.waypoints.js"></script>
+	<script src="/components/CounterUp/jquery.counterup.min.js"></script>
 
   <!-- SweetAlert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

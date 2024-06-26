@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Page_nuestrahisotriaController extends Page_mainController
 {
@@ -8,5 +8,5 @@ class Page_nuestrahisotriaController extends Page_mainController
   {
     $this->_view->banner = $this->template->banner(10);
     $this->_view->contenido = $this->template->getContentseccion(10);
-    }
+  }
 }

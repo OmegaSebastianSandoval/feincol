@@ -77,6 +77,10 @@ $isActiveInicio = in_array($this->botonactivo, $this->isActiveInicio);
 
                 <div class="vr"></div>
 
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $this->botonactivo == 22 ? 'active' : '' ?>" href="/page/nuestrofondo">Nuestro Fondo</a>
+                </li>
+                <div class="vr"></div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle <?php echo $isActivePortafolio ? 'active' : '' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Portafolio
