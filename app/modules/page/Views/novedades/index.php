@@ -24,7 +24,10 @@ echo $this->banner;
     </div>
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-notasinteres" role="tabpanel" aria-labelledby="v-pills-notasinteres-tab" tabindex="0">
-        <?php  ?>
+        <?php  
+        echo $this->contenidoNovedades;
+        
+        ?>
 
       </div>
       <div class="tab-pane fade" id="v-pills-cumple" role="tabpanel" aria-labelledby="v-pills-cumple-tab" tabindex="0">
@@ -85,7 +88,9 @@ echo $this->banner;
   </div>
 
 </div>
-
+<div id="mostrar-notasinteres" class="mostrar-notasinteres">
+  <?php echo $this->sliderNovedades; ?>
+</div>
 <style>
   .main-general {
     background-color: #f7f7f7;
@@ -102,3 +107,35 @@ echo $this->banner;
     position: static;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabNotasInteres = document.getElementById('v-pills-notasinteres-tab');
+   
+    const tabs = document.querySelectorAll('[data-bs-toggle="pill"]');
+
+    const mostrarNotasInteres = document.getElementById('mostrar-notasinteres');
+ 
+
+    // Función para mostrar/ocultar secciones
+    function toggleSections(activeTabId) {
+      if (activeTabId === 'v-pills-notasinteres-tab') {
+        mostrarNotasInteres.classList.remove('d-none');
+        // mostrarNormatividad.classList.add('d-none');
+      }  else {
+        mostrarNotasInteres.classList.add('d-none');
+        // mostrarNormatividad.classList.add('d-none');
+      }
+    }
+
+    // Escuchar eventos de cambio de pestaña
+    tabs.forEach(tab => {
+      tab.addEventListener('show.bs.tab', function() {
+        toggleSections(tab.id);
+      });
+    });
+
+    // Mostrar la sección "Quienes Somos" por defecto al cargar la página
+    toggleSections('v-pills-notasinteres-tab');
+  });
+</script>

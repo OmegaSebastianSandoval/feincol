@@ -10,6 +10,10 @@ class Page_novedadesController extends Page_mainController
     $this->_view->contenido = $this->template->getContentseccion(25);
 
     /* notas de interes */
+    $this->_view->contenidoNovedades = $this->template->getContentseccion(22);
+    $this->_view->sliderNovedades = $this->template->getContentseccionById(151);
+
+
     /* cumpleaños  */
     $this->_view->cumpleContenido = $this->template->getContentseccion(23);
 

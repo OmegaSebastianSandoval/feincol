@@ -96,7 +96,7 @@ $isActiveNovedades = in_array($this->botonactivo, $this->isActiveNovedades);
                 </li>
                 <div class="vr"></div>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo $this->botonactivo == 23 ? 'active' : '' ?>" href="/page/novedades">Novedades</a>
+                    <a class="nav-link <?php echo $isActiveNovedades ? 'active' : '' ?>" href="/page/novedades">Novedades</a>
                 </li>
 
                 <div class="vr"></div>
@@ -114,7 +114,7 @@ $isActiveNovedades = in_array($this->botonactivo, $this->isActiveNovedades);
                         <li><a class="dropdown-item <?php echo $this->botonactivo == 18 ? 'active' : '' ?>" href="/page/tarjetages">Tarjeta GES</a></li>
                         <li><a class="dropdown-item <?php echo $this->botonactivo == 17 ? 'active' : '' ?>" href="/page/convenios">Convenios</a></li>
 
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    
                     </ul>
                 </li>
                 <div class="vr"></div>
