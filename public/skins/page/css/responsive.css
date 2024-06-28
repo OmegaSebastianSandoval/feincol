@@ -1,5 +1,55 @@
+@media (width < 1576px) {
+    .welcome-text {
+        font-size: 30px;
+    }
+}
+
+
+
+@media (width < 1492px) {
+    .contenido-ahorros section.contenedor-seccion {
+        height: 350px;
+    }
+}
+
+@media (width < 1192px) {
+    .contenido-ahorros section.contenedor-seccion {
+        height: 310px;
+    }
+}
+
+@media (width < 992px) {
+    .contenido-ahorros section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 31%;
+        height: 310px;
+    }
+
+
+
+    .contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
+        height: auto;
+    }
+}
+
+
 @media (width <992px) {
 
+    .contenedor-pestanas{
+        flex-wrap: wrap;
+    }
+    .contenedor-pestanas .nav{
+        width: 100%;
+    }
+    .contenedor-tab .nav-link{
+        width: 100%;
+    }
+    .mostrar-quienessomos2{
+        display: none !important;
+    }
+    .contenedor-pestanas .tab-content{
+        width: 100%;
+    }
     /* -------------------
   BANNER INTERNAS INICIO
   -------------------- */
@@ -113,8 +163,78 @@ FOOTER FIN
 -------------------- */
 
 
+
+    /* ********************
+INICIO FELICIDAD
+****************************/
+    .contenido-felicidad section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 31%;
+    }
+
+    .contenido-felicidad section.contenedor-seccion .imagen-contenido-simple img {
+        height: auto;
+    }
+
+    /* ********************
+FIN FELICIDAD
+****************************/
+
+    /* -------------------
+ ORGANIGRAMA INICIO
+  -------------------- */
+    .barra-progreso {
+        width: 100% !important;
+        margin: 10px auto !important;
+    }
+
+    .id_165 {
+        min-height: 450px;
+    }
+
+    .id_165,
+    .id_166 {
+        width: 100% !important;
+    }
+
+    /* -------------------
+ ORGANIGRAMA FIN
+  -------------------- */
+
+    /* -------------------
+ CREDITOS INICIO
+  -------------------- */
+    .contenido-creditos section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 31%;
+    }
+
+    .contenido-creditos section.contenedor-seccion .imagen-contenido-simple img {
+        height: auto;
+    }
+
+
+    /* -------------------
+ CREDITOS FIN
+  -------------------- */
+
+
+
 }
 
+@media (width >771px) {
+    .w-md-50 {
+        width: 50% !important;
+
+    }
+}
+
+@media (width <771px) {
+
+    .gap-md-10 {
+        gap: 1rem !important;
+    }
+}
 
 
 @media (max-width:767px) {
@@ -168,6 +288,10 @@ FOOTER FIN
         object-fit: contain;
     }
 
+    .img-banner-interna {
+        height: auto;
+    }
+
     /* -------------------
   BANNER INTERNAS FIN
   -------------------- */
@@ -177,24 +301,351 @@ FOOTER FIN
     }
 
 
-    .contenedor-seccion{
+    .contenedor-seccion {
         padding: 25px 0;
     }
- /* -------------------
+
+
+
+    /* ********************
+INICIO FELICIDAD
+****************************/
+    .contenido-felicidad section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 47.5%;
+    }
+
+    .contenido-felicidad section.contenedor-seccion .imagen-contenido-simple img {
+        /* height: 167px; */
+    }
+
+    .contenido-felicidad section.contenedor-seccion .descripcion-seccion {
+        height: 78px;
+    }
+
+    .contenido-felicidad section.contenedor-seccion .boton {
+        padding: 0 10px 10px 10px;
+    }
+
+    .contenido-felicidad section.contenedor-seccion .boton .btn-azul {
+        margin: inherit;
+        font-size: 14px;
+        padding: 4px 15px;
+    }
+
+    .contenido-felicidad section.contenedor-seccion h2:nth-child(1) {
+        font-size: calc(1.5rem + 0.1vw);
+
+    }
+
+    .contenido-felicidad section.contenedor-seccion h2 {
+        font-size: calc(1rem + 0.1vw);
+        height: 26px;
+    }
+
+    .contenido-felicidad section.contenedor-seccion .descripcion-seccion p {
+        font-size: 14px;
+    }
+
+
+
+    .item-felicidad section.contenedor-seccion .design-four .imagen-contenido img,
+    .item-felicidad section.contenedor-seccion .design-one .imagen-contenido img,
+    .item-felicidad section.contenedor-seccion .design-two .imagen-contenido img {
+        margin-bottom: 20px;
+    }
+
+    .item-felicidad section.contenedor-seccion p,
+    .item-felicidad section.contenedor-seccion p span {
+        font-size: 15px;
+    }
+
+    /* ********************
+FIN FELICIDAD
+****************************/
+
+
+    /* ********************
+INICIO OPINIONES
+****************************/
+    .contenido-opiniones .imagen-contenido::after {
+
+        transform: scale(1);
+        left: 0;
+    }
+
+    .contenido-opiniones .descripcion h4 {
+        margin-top: 15px;
+    }
+
+    /* ********************
+FIN OPINIONES
+****************************/
+
+
+    /* ********************
+INICIO SERVICIOS
+****************************/
+
+    .contenido-servicios {
+        gap: 10px;
+    }
+
+    .contenido-servicios section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 47.5%;
+    }
+
+    .contenido-servicios section.contenedor-seccion .imagen-contenido-simple img {
+        /* height: 167px; */
+    }
+
+    .contenido-servicios section.contenedor-seccion .introduccion-seccion {
+
+        padding: 0 10px;
+    }
+
+    .contenido-servicios section.contenedor-seccion .descripcion-seccion {
+        height: 40px;
+        padding: 0 10px;
+    }
+
+    .contenido-servicios section.contenedor-seccion .boton {
+        padding: 0 10px 10px 10px;
+    }
+
+    .contenido-servicios section.contenedor-seccion .boton .btn-amarillo {
+        margin: inherit;
+        font-size: 14px;
+        padding: 4px 15px;
+    }
+
+    .contenido-servicios section.contenedor-seccion h2:nth-child(1) {
+        font-size: calc(1.5rem + 0.1vw);
+        height: 26px;
+    }
+
+    .contenido-servicios section.contenedor-seccion h2 {
+        font-size: calc(1rem + 0.1vw);
+        height: 26px;
+    }
+
+    .contenido-servicios section.contenedor-seccion .descripcion-seccion p {
+        font-size: 14px;
+    }
+
+    /* ********************
+FIN SERVICIOS
+****************************/
+
+
+
+    /* ********************
+TARJETA GES INICIO
+****************************/
+    .contenido-tarjetages td {
+        display: block;
+    }
+
+    .contenido-tarjetages td {
+        display: block;
+        height: auto !important;
+        width: 333px !important;
+    }
+
+    /* ********************
+TARJETA GES FIN
+****************************/
+
+
+
+
+
+    /* -------------------
+ ORGANIGRAMA INICIO
+  -------------------- */
+
+    .contenido-organigrama table td {
+        /* width: 100%; */
+        display: inline-table;
+        width: 300px;
+    }
+
+    .id_172 {
+        min-height: 291px;
+    }
+
+    .three-173 .descripcion p {
+        line-height: 1;
+    }
+
+    .three-173 .descripcion span {
+        font-size: 25px !important;
+    }
+
+    .three-175 .justify-content-center,
+    .three-174 .justify-content-center {
+        justify-content: center !important;
+        margin-bottom: 15px;
+    }
+
+    /* -------------------
+ ORGANIGRAMA INICIO
+  -------------------- */
+
+
+
+
+    /* -------------------
+ CREDITOS INICIO
+  -------------------- */
+    .contenido-creditos section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 47.5%;
+    }
+
+    .contenido-creditos section.contenedor-seccion .imagen-contenido-simple img {
+        /* height: 167px; */
+    }
+
+    .contenido-creditos section.contenedor-seccion .descripcion-seccion {
+        height: 45px;
+        padding: 0 6px;
+    }
+
+    .contenido-creditos section.contenedor-seccion .boton {
+        padding: 0 10px 10px 10px;
+    }
+
+    .contenido-creditos section.contenedor-seccion .boton .btn-azul {
+        margin: inherit;
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+
+    .contenido-creditos section.contenedor-seccion h2:nth-child(1) {
+        font-size: calc(1.5rem + 0.1vw);
+
+    }
+
+    .contenido-creditos section.contenedor-seccion h2 {
+        font-size: calc(1rem + 0.1vw);
+        height: 26px;
+    }
+
+    .contenido-creditos section.contenedor-seccion .descripcion-seccion p {
+        font-size: 14px;
+    }
+
+
+
+    .item-credito section.contenedor-seccion .design-four .imagen-contenido img,
+    .item-credito section.contenedor-seccion .design-one .imagen-contenido img,
+    .item-credito section.contenedor-seccion .design-two .imagen-contenido img {
+        margin-bottom: 20px;
+    }
+
+    .item-credito section.contenedor-seccion p,
+    .item-credito section.contenedor-seccion p span {
+        font-size: 15px;
+    }
+
+    .item-credito table td {
+        /* width: 100%; */
+        display: inline-table;
+        width: 300px;
+    }
+
+    /* -------------------
+ CREDITOS FIN
+  -------------------- */
+
+
+    /* -------------------
+ AHORROS INICIO
+  -------------------- */
+    .contenido-ahorros section.contenedor-seccion {
+        flex: 0 0 auto;
+        width: 47.5%;
+        height: 285px;
+    }
+
+    .contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
+        /* height: 167px; */
+    }
+
+    .contenido-ahorros section.contenedor-seccion .descripcion-seccion {
+        height: 45px;
+        padding: 0 6px;
+    }
+
+    .contenido-ahorros section.contenedor-seccion .boton {
+        padding: 0 10px 10px 10px;
+    }
+
+    .contenido-ahorros section.contenedor-seccion .boton .btn-azul {
+        margin: inherit;
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+
+    .contenido-ahorros section.contenedor-seccion h2:nth-child(1) {
+        font-size: calc(1.5rem + 0.1vw);
+
+    }
+
+    .contenido-ahorros section.contenedor-seccion h2 {
+        font-size: calc(1rem + 0.1vw);
+        height: 26px;
+    }
+
+    .contenido-ahorros section.contenedor-seccion .descripcion-seccion p {
+        font-size: 14px;
+    }
+
+    .contenido-ahorros section.contenedor-seccion:hover h2 {
+        height: 26px;
+    }
+
+    .item-ahorro section.contenedor-seccion .design-four .imagen-contenido img,
+    .item-ahorro section.contenedor-seccion .design-one .imagen-contenido img,
+    .item-ahorro section.contenedor-seccion .design-two .imagen-contenido img {
+        margin-bottom: 20px;
+    }
+
+    .item-ahorro section.contenedor-seccion p,
+    .item-ahorro section.contenedor-seccion p span {
+        font-size: 15px;
+    }
+
+    .item-ahorro table td {
+        /* width: 100%; */
+        display: inline-table;
+        width: 300px;
+    }
+
+    /* -------------------
+ AHORROS FIN
+  -------------------- */
+
+    /* -------------------
   DOCUMENTOS INCIIO
   -------------------- */
-  .docs-container{
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .docs-container .docs-header h3 {
-    font-size: calc(1.125rem + .6vw);
-  }
-  .docs-container .items-docs-row .doc-item-file h4{
-    font-size: calc(1rem + .3vw);
+    .docs-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
-  }
- /* -------------------
+    .docs-container .docs-header h3 {
+        font-size: calc(1.125rem + .6vw);
+    }
+
+    .docs-container .items-docs-row .doc-item-file h4 {
+        font-size: calc(1rem + .3vw);
+
+    }
+
+    /* -------------------
   DOCUMENTOS FIN
   -------------------- */
 
@@ -260,14 +711,66 @@ INICIO SECCION COMPLETA DIRECTORIO
         display: block !important;
         text-align: center;
     }
+
     .id_30 .design-two .col-sm-6:nth-child(2) {
         padding: 0 15px 0 15px;
     }
-    .id_30 .design-two .descripcion{
+
+    .id_30 .design-two .descripcion {
         margin-top: 20px;
     }
 
     /*++++++++++++++++++++++++++++++++
 FIN SECCION COMPLETA DIRECTORIO
  ++++++++++++++++++++++++++++++++++++++++ */
+
+
+    /* ********************
+INICIO SERVICIOS
+****************************/
+    .item-servicios section.contenedor-seccion .design-four .imagen-contenido img,
+    .item-servicios section.contenedor-seccion .design-one .imagen-contenido img,
+    .item-servicios section.contenedor-seccion .design-two .imagen-contenido img {
+        margin-bottom: 20px;
+    }
+
+    .item-servicios section.contenedor-seccion p,
+    .item-servicios section.contenedor-seccion p span {
+        font-size: 15px;
+    }
+
+    .item-servicios table td {
+        /* width: 100%; */
+        display: inline-table;
+        width: 300px;
+    }
+
+    /* ********************
+FIN SERVICIOS
+****************************/
+
+
+
+    /* ********************
+INICIO AHORROS
+****************************/
+
+    .contenido-ahorros section.contenedor-seccion .descripcion-seccion {
+        transform: translateY(0px);
+    }
+
+    .contenido-ahorros section.contenedor-seccion h2 {
+        transform: translateY(0px);
+    }
+
+    .contenido-ahorros section.contenedor-seccion {
+
+        height: 235px;
+    }
+
+
+
+    /* ********************
+FIN AHORROS
+****************************/
 }

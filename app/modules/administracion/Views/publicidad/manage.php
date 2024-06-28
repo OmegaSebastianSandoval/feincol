@@ -183,7 +183,16 @@
                         </div>
                     <?php } ?>
                 </div>
-
+                <div class="col-6 form-group" id="vid">
+                            <label for="publicidad_video" class="control-label">Video</label>
+                            <label class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text input-icono  fondo-azul "><i class="fas fa-pencil-alt"></i></span>
+                                </div>
+                                <input type="text" value="<?= $this->content->publicidad_video; ?>" name="publicidad_video" id="publicidad_video" class="form-control">
+                            </label>
+                            <div class="help-block with-errors"></div>
+                        </div>
                 <div class="col-3 form-group">
                     <label for="publicidad_color_fondo" class="control-label">Color Fondo</label>
                     <label class="input-group">

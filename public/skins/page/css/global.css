@@ -140,6 +140,7 @@
 }
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 @font-face {
   font-family: 'TitilliumWeb Black';
@@ -269,19 +270,6 @@ h2 {
 
 }
 
-@media (width >771px) {
-  .w-md-50 {
-    width: 50% !important;
-
-  }
-}
-
-@media (width <771px) {
-
-  .gap-md-10 {
-    gap: 1rem !important;
-  }
-}
 
 .btn-verde {
   background-color: var(--verde);
@@ -403,15 +391,6 @@ h2 {
   color: var(--azul-oscuro);
   line-height: 1;
 }
-
-@media (width < 1576px) {
-  .welcome-text {
-    font-size: 30px;
-
-  }
-
-}
-
 
 
 .highlight {
@@ -756,6 +735,31 @@ footer .btn-primary {
 
 .carousel-indicators .active {
   background-color: var(--verdeclaro);
+}
+
+
+
+.fondo-imagen-interna-video:hover .img-banner-interna {
+  opacity: 0.7;
+  /* Opaca la imagen al pasar el mouse */
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  /* Hace que el ícono no interfiera con el enlace */
+}
+
+.fondo-imagen-interna-video:hover .play-icon {
+  opacity: 1;
+  /* Muestra el ícono al pasar el mouse */
 }
 
 /* -------------------
@@ -1347,58 +1351,6 @@ INICIO FELICIDAD
 
 }
 
-@media (width < 992px) {
-  .contenido-felicidad section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 31%;
-  }
-
-  .contenido-felicidad section.contenedor-seccion .imagen-contenido-simple img {
-    height: auto;
-  }
-}
-
-@media (width < 768px) {
-  .contenido-felicidad section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 47.5%;
-  }
-
-  .contenido-felicidad section.contenedor-seccion .imagen-contenido-simple img {
-    /* height: 167px; */
-  }
-
-  .contenido-felicidad section.contenedor-seccion .descripcion-seccion {
-    height: 78px;
-  }
-
-  .contenido-felicidad section.contenedor-seccion .boton {
-    padding: 0 10px 10px 10px;
-  }
-
-  .contenido-felicidad section.contenedor-seccion .boton .btn-azul {
-    margin: inherit;
-    font-size: 14px;
-    padding: 4px 15px;
-  }
-
-  .contenido-felicidad section.contenedor-seccion h2:nth-child(1) {
-    font-size: calc(1.5rem + 0.1vw);
-
-  }
-
-  .contenido-felicidad section.contenedor-seccion h2 {
-    font-size: calc(1rem + 0.1vw);
-    height: 26px;
-  }
-
-  .contenido-felicidad section.contenedor-seccion .descripcion-seccion p {
-    font-size: 14px;
-  }
-}
-
-@media (width < 576px) {}
-
 .id_48 {
   width: 99% !important;
   box-shadow: none !important;
@@ -1453,20 +1405,6 @@ INICIO ITEM FELICIDAD
 .item-felicidad section.contenedor-seccion .design-one .descripcion h4,
 .item-felicidad section.contenedor-seccion .design-two .descripcion h4 {
   font-size: calc(1rem + .1vw);
-}
-
-@media (width < 768px) {
-
-  .item-felicidad section.contenedor-seccion .design-four .imagen-contenido img,
-  .item-felicidad section.contenedor-seccion .design-one .imagen-contenido img,
-  .item-felicidad section.contenedor-seccion .design-two .imagen-contenido img {
-    margin-bottom: 20px;
-  }
-
-  .item-felicidad section.contenedor-seccion p,
-  .item-felicidad section.contenedor-seccion p span {
-    font-size: 15px;
-  }
 }
 
 
@@ -1578,18 +1516,6 @@ FIN  ITEM  FELICIDAD
   font-size: calc(1rem + .2vw);
 }
 
-@media (width < 768px) {
-  .contenido-opiniones .imagen-contenido::after {
-
-    transform: scale(1);
-    left: 0;
-  }
-
-  .contenido-opiniones .descripcion h4 {
-    margin-top: 15px;
-  }
-}
-
 
 
 /*------------------- 
@@ -1641,23 +1567,6 @@ FIN  ITEM  FELICIDAD
   color: var(--blanco) !important;
   font-weight: 700;
 }
-
-@media (width < 768px) {
-  .contenido-tarjetages td {
-    display: block;
-  }
-
-  .contenido-tarjetages td {
-    display: block;
-    height: auto !important;
-    width: 333px !important;
-    /* display: table-cell;
-    width: 100%; */
-    /*  width: 100%;
-    display: flex; */
-  }
-}
-
 
 /*+++++++++++++++------------------- +++++++++++++++
  TARJETA GES   FIN 
@@ -1766,56 +1675,6 @@ INICIO SERVICIOS
   }
 }
 
-@media (width < 768px) {
-  .contenido-servicios {
-    gap: 10px;
-  }
-
-  .contenido-servicios section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 47.5%;
-  }
-
-  .contenido-servicios section.contenedor-seccion .imagen-contenido-simple img {
-    /* height: 167px; */
-  }
-
-  .contenido-servicios section.contenedor-seccion .introduccion-seccion {
-
-    padding: 0 10px;
-  }
-
-  .contenido-servicios section.contenedor-seccion .descripcion-seccion {
-    height: 40px;
-    padding: 0 10px;
-  }
-
-  .contenido-servicios section.contenedor-seccion .boton {
-    padding: 0 10px 10px 10px;
-  }
-
-  .contenido-servicios section.contenedor-seccion .boton .btn-amarillo {
-    margin: inherit;
-    font-size: 14px;
-    padding: 4px 15px;
-  }
-
-  .contenido-servicios section.contenedor-seccion h2:nth-child(1) {
-    font-size: calc(1.5rem + 0.1vw);
-    height: 26px;
-  }
-
-  .contenido-servicios section.contenedor-seccion h2 {
-    font-size: calc(1rem + 0.1vw);
-    height: 26px;
-  }
-
-  .contenido-servicios section.contenedor-seccion .descripcion-seccion p {
-    font-size: 14px;
-  }
-}
-
-@media (width < 576px) {}
 
 .id_88 {
   width: 99% !important;
@@ -1913,25 +1772,7 @@ INICIO ITEM SERVICIOS
   color: var(--azul);
 }
 
-@media (width < 768px) {
 
-  .item-servicios section.contenedor-seccion .design-four .imagen-contenido img,
-  .item-servicios section.contenedor-seccion .design-one .imagen-contenido img,
-  .item-servicios section.contenedor-seccion .design-two .imagen-contenido img {
-    margin-bottom: 20px;
-  }
-
-  .item-servicios section.contenedor-seccion p,
-  .item-servicios section.contenedor-seccion p span {
-    font-size: 15px;
-  }
-
-  .item-servicios table td {
-    /* width: 100%; */
-    display: inline-table;
-    width: 300px;
-  }
-}
 
 /*  */
 
@@ -2067,58 +1908,7 @@ INICIO CREDITOS
 
 }
 
-@media (width < 992px) {
-  .contenido-creditos section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 31%;
-  }
 
-  .contenido-creditos section.contenedor-seccion .imagen-contenido-simple img {
-    height: auto;
-  }
-}
-
-@media (width < 768px) {
-  .contenido-creditos section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 47.5%;
-  }
-
-  .contenido-creditos section.contenedor-seccion .imagen-contenido-simple img {
-    /* height: 167px; */
-  }
-
-  .contenido-creditos section.contenedor-seccion .descripcion-seccion {
-    height: 45px;
-    padding: 0 6px;
-  }
-
-  .contenido-creditos section.contenedor-seccion .boton {
-    padding: 0 10px 10px 10px;
-  }
-
-  .contenido-creditos section.contenedor-seccion .boton .btn-azul {
-    margin: inherit;
-    font-size: 14px;
-    padding: 4px 10px;
-  }
-
-  .contenido-creditos section.contenedor-seccion h2:nth-child(1) {
-    font-size: calc(1.5rem + 0.1vw);
-
-  }
-
-  .contenido-creditos section.contenedor-seccion h2 {
-    font-size: calc(1rem + 0.1vw);
-    height: 26px;
-  }
-
-  .contenido-creditos section.contenedor-seccion .descripcion-seccion p {
-    font-size: 14px;
-  }
-}
-
-@media (width < 576px) {}
 
 .id_101,
 .id_106 {
@@ -2246,25 +2036,7 @@ INICIO ITEM CREDITOS
   color: var(--azul);
 }
 
-@media (width < 768px) {
 
-  .item-credito section.contenedor-seccion .design-four .imagen-contenido img,
-  .item-credito section.contenedor-seccion .design-one .imagen-contenido img,
-  .item-credito section.contenedor-seccion .design-two .imagen-contenido img {
-    margin-bottom: 20px;
-  }
-
-  .item-credito section.contenedor-seccion p,
-  .item-credito section.contenedor-seccion p span {
-    font-size: 15px;
-  }
-
-  .item-credito table td {
-    /* width: 100%; */
-    display: inline-table;
-    width: 300px;
-  }
-}
 
 /*  */
 
@@ -2411,94 +2183,9 @@ INICIO AHORRO
   transform: translateY(0) !important;
 }
 
-@media (width < 1492px) {
-  .contenido-ahorros section.contenedor-seccion {
-    height: 350px;
-  }
-}
-
-@media (width < 1192px) {
-  .contenido-ahorros section.contenedor-seccion {
-    height: 310px;
-  }
-}
-
-@media (width < 992px) {
-  .contenido-ahorros section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 31%;
-    height: 310px;
-  }
 
 
 
-  .contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
-    height: auto;
-  }
-}
-
-@media (width < 768px) {
-  .contenido-ahorros section.contenedor-seccion {
-    flex: 0 0 auto;
-    width: 47.5%;
-    height: 285px;
-  }
-
-  .contenido-ahorros section.contenedor-seccion .imagen-contenido-simple img {
-    /* height: 167px; */
-  }
-
-  .contenido-ahorros section.contenedor-seccion .descripcion-seccion {
-    height: 45px;
-    padding: 0 6px;
-  }
-
-  .contenido-ahorros section.contenedor-seccion .boton {
-    padding: 0 10px 10px 10px;
-  }
-
-  .contenido-ahorros section.contenedor-seccion .boton .btn-azul {
-    margin: inherit;
-    font-size: 14px;
-    padding: 4px 10px;
-  }
-
-  .contenido-ahorros section.contenedor-seccion h2:nth-child(1) {
-    font-size: calc(1.5rem + 0.1vw);
-
-  }
-
-  .contenido-ahorros section.contenedor-seccion h2 {
-    font-size: calc(1rem + 0.1vw);
-    height: 26px;
-  }
-
-  .contenido-ahorros section.contenedor-seccion .descripcion-seccion p {
-    font-size: 14px;
-  }
-
-  .contenido-ahorros section.contenedor-seccion:hover h2 {
-
-
-    height: 26px;
-
-  }
-}
-
-@media (width < 576px) {
-  .contenido-ahorros section.contenedor-seccion .descripcion-seccion {
-    transform: translateY(0px);
-  }
-
-  .contenido-ahorros section.contenedor-seccion h2 {
-    transform: translateY(0px);
-  }
-
-  .contenido-ahorros section.contenedor-seccion {
-
-    height: 235px;
-  }
-}
 
 
 .id_111 {
@@ -2695,25 +2382,7 @@ INICIO ITEM AHORRO
 }
 
 
-@media (width < 768px) {
 
-  .item-ahorro section.contenedor-seccion .design-four .imagen-contenido img,
-  .item-ahorro section.contenedor-seccion .design-one .imagen-contenido img,
-  .item-ahorro section.contenedor-seccion .design-two .imagen-contenido img {
-    margin-bottom: 20px;
-  }
-
-  .item-ahorro section.contenedor-seccion p,
-  .item-ahorro section.contenedor-seccion p span {
-    font-size: 15px;
-  }
-
-  .item-ahorro table td {
-    /* width: 100%; */
-    display: inline-table;
-    width: 300px;
-  }
-}
 
 /*  */
 
@@ -3065,7 +2734,7 @@ INICIO NUESTRO FONDO
   color: var(--gris-medio);
   font-weight: 700;
   text-align: start;
-  width: 210px;
+  width: 245px;
 
   justify-content: space-between;
   gap: 10px;
@@ -3080,6 +2749,10 @@ INICIO NUESTRO FONDO
 
 .contenedor-tab .nav-link.active {
   color: var(--azul) !important;
+}
+.contenedor-tab .nav-link.active:focus-visible {
+ border: 1px solid var(--azul);
+ outline: var(--azul) auto 1px !important;
 }
 
 .id_141 .descripcion {
@@ -3140,10 +2813,99 @@ INICIO NUESTRO FONDO
   height: 100% !important;
 }
 
+.mostrar-quienessomos2 {
+  border-top: 3px solid var(--azul);
+  width: 245px;
+
+}
+
+.content-lateral {
+  padding: 10px;
+  border-bottom: 1px solid var(--gris-claro);
+  background-color: #f2f2f2 !important;
+}
+
+.content-lateral h5 {
+  color: var(--azul-oscuro);
+
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 7px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+.content-lateral .text-lateral {
+  font-size: 13px;
+
+}
+
+.content-lateral .text-lateral p {
+  text-align: start !important;
+  margin-bottom: 7px;
+
+}
+
+.content-lateral .enlace-alteral {
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  text-align: end;
+  color: var(--azul);
+}
 
 /* ********************
 FIN NUESTRO FONDO
 *************************** */
+
+
+/* ********************
+INICIO QUIENES SOMOS
+*************************** */
+.id_158 .caja-contenido-simple {
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  padding: 15px !important;
+
+}
+
+.id_158 .imagen-contenido img {
+  display: block;
+  margin-inline: auto;
+}
+
+.id_158 .caja-contenido-simple h2 {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem !important;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.id_158 .caja-contenido-simple .descripcion {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.id_158 .caja-contenido-simple .descripcion p {
+  text-wrap: pretty;
+}
+
+.id_158 .btn-amarillo {
+  margin: 0px auto;
+  font-size: 16px;
+  padding: 4px 13px;
+}
+
+/* ********************
+FIN QUIENES SOMOS
+*************************** */
+
+
 
 
 /* ********************
@@ -3229,9 +2991,10 @@ FIN GALERIA
 /* ********************
 INICIO  NOTAS DE INTERES
 *************************** */
-.contenedor-notas .contenedor-seccion{
+.contenedor-notas .contenedor-seccion {
   padding: 15px 0 !important;
 }
+
 .sliderCont h3 {
   font-size: calc(1rem + .3vw);
   color: var(--azul);
@@ -3265,12 +3028,176 @@ INICIO  NOTAS DE INTERES
   color: var(--azul);
   font-size: 10px;
 }
-.slider_152 .slick-dots li button:before{
+
+.slider_152 .slick-dots li button:before {
   color: var(--azul-claro);
 }
+
 /* ********************
 FIN  NOTAS DE INTERES
 *************************** */
+
+
+
+/* ********************
+INICIO ORGANIGRAMA
+****************************/
+.contenido-organigrama {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contenido-organigrama .contenedor-seccion {
+  width: 100%;
+}
+
+.id_165 {
+  width: 50% !important;
+  flex: 0 0 auto;
+
+}
+
+.id_166 {
+  width: 50% !important;
+  flex: 0 0 auto;
+}
+
+.id_165 {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.contenido-organigrama td {
+  width: 50%;
+}
+
+.contenido-organigrama td li::marker {
+  /* content: '\2022'; */
+  color: var(--azul);
+}
+
+.id_172 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  display: grid;
+  place-items: center;
+}
+
+.id_172::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000091;
+  /* Blanco semitransparente */
+  /* Puedes ajustar el color y la opacidad según tus necesidades */
+}
+
+.three-174 .justify-content-center {
+  justify-content: end !important;
+}
+
+.three-175 .justify-content-center {
+  justify-content: start !important;
+}
+
+/* ********************
+FIN ORGANIGRAMA
+****************************/
+
+
+
+
+
+
+
+
+
+/* ********************
+INICIO PROGRESS BAR
+*************************** */
+
+.progress-bar {
+  width: 0;
+  animation: progress 1.5s ease-in-out forwards, progress-bar-stripes 1s linear infinite;
+
+  .title {
+    opacity: 0;
+    animation: show 0.35s forwards ease-in-out 0.5s;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+    
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 40px 0;
+  }
+}
+@-moz-keyframes progress-bar-stripes {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 40px 0;
+  }
+}
+@-ms-keyframes progress-bar-stripes {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 40px 0;
+  }
+}
+@-o-keyframes progress-bar-stripes {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 40px 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 40px 0;
+  }
+}
+/* ********************
+FIN PROGRESS BAR
+*************************** */
+
+
 
 
 /* ********************

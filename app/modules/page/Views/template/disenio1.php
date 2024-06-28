@@ -14,7 +14,7 @@
 			<?php } ?>
 			<div>
 				<?php if ($contenido->contenido_enlace) { ?>
-					<a href="" class="btn btn-block btn-vermas" <?php if ($contenido->contenido_enlace_abrir == 1) { ?> target="blank"  <?php } ?> > <?php if( $contenido->contenido_vermas){ ?><?php echo $contenido->contenido_vermas; ?><?php } else { ?>Ver Más<?php } ?></a>
+					<a href="<?php echo $contenido->contenido_enlace; ?>" class="btn btn-block btn-vermas" <?php if ($contenido->contenido_enlace_abrir == 1) { ?> target="blank"  <?php } ?> > <?php if( $contenido->contenido_vermas){ ?><?php echo $contenido->contenido_vermas; ?><?php } else { ?>Ver Más<?php } ?></a>
 				<?php } ?>
 			</div>
 		</div>

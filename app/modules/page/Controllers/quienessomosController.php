@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Page_quienessomosController extends Page_mainController
 {
@@ -8,5 +8,8 @@ class Page_quienessomosController extends Page_mainController
   {
     $this->_view->banner = $this->template->banner(8);
     $this->_view->contenido = $this->template->getContentseccion(8);
-    }
+    $this->_view->contador = $this->template->getContentseccionById(141);
+    $this->_view->cards = $this->template->getContentseccionById(158);
+
+  }
 }

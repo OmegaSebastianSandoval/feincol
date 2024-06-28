@@ -4,6 +4,9 @@ echo $this->banner;
 
 <?php
 echo $this->contenido;
+echo $this->contador;
+echo $this->cards;
+
 ?>
 <style>
   .main-general{

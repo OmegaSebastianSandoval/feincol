@@ -1,4 +1,4 @@
-<div data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="caja-contenido-simple p-0 design-four contenido-animado four-<?php echo $contenido->contenido_id ?>" style="background-color: <?php if ($contenido->contenido_fondo_color) {
+<div data-aos="fade-up"  class="caja-contenido-simple p-0 design-four contenido-animado four-<?php echo $contenido->contenido_id ?>" style="background-color: <?php if ($contenido->contenido_fondo_color) {
 																															echo  $contenido->contenido_fondo_color;
 																														} else if ($colorfondo) {
 																															echo $colorfondo;

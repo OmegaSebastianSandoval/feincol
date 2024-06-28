@@ -119,7 +119,9 @@
 </head>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   })
 </script>
 

@@ -1,21 +1,22 @@
 <div class="slider-internas">
 
     <div id="carouselprincipal<?php echo $this->seccionbanner;  ?>" class="carousel slide" data-bs-ride="carousel">
-        <!-- <ol class="carousel-indicators">
-      <?php foreach ($this->banners as $key => $banner) { ?>
-      <li data-bs-target="#carouselprincipal<?php echo $this->seccionbanner;  ?>" data-slide-to="0" <?php if (
-                                                                                                        $key == 0
-                                                                                                    ) { ?>class="active" <?php }  ?>></li>
-      <?php } ?>
-    </ol> -->
+
         <div class="carousel-inner">
             <?php foreach ($this->banners as $key => $banner) { ?>
                 <div class="carousel-item <?php if ($key == 0) { ?>active <?php } ?>">
 
                     <?php if ($this->id_youtube($banner->publicidad_video) != false) { ?>
-                        <div class="fondo-video-youtube">
+                        <!-- <div class="fondo-video-youtube">
                             <div class="banner-video-youtube" id="videobanner<?php echo $banner->publicidad_id; ?> " data-video="<?php echo $this->id_youtube($banner->publicidad_video); ?>"></div>
+                        </div> -->
+                        <div class="fondo-imagen-interna fondo-imagen-interna-video">
+                            <a href="<?php echo $banner->publicidad_video; ?>" data-fancybox="gallery">
+                                <img class="img-banner-interna img-video" src="/images/<?php echo $banner->publicidad_imagen; ?>" />
+                                <div class="play-icon">▶️</div>
+                            </a>
                         </div>
+
                     <?php } else { ?>
 
                         <div class="fondo-imagen-interna d-none d-sm-flex justify-content-end align-items-center">

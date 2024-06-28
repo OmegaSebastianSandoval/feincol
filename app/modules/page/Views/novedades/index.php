@@ -12,21 +12,21 @@ echo $this->banner;
 
   </div>
 </section>
-<div class="container contenedor-tab py-4">
+<div class="container contenedor-tab pb-4">
 
-  <div class="d-flex align-items-start">
+  <div class="contenedor-pestanas d-flex align-items-start">
     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <button class="nav-link active" id="v-pills-notasinteres-tab" data-bs-toggle="pill" data-bs-target="#v-pills-notasinteres" type="button" role="tab" aria-controls="v-pills-notasinteres" aria-selected="true"><img src="/corte/UbicacionFooter.png" alt=""> Notas de interés <i class="fa-solid fa-caret-right"></i></button>
       <button class="nav-link" id="v-pills-cumple-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cumple" type="button" role="tab" aria-controls="v-pills-cumple" aria-selected="false"><img src="/corte/UbicacionFooter.png" alt=""> Cumpleaños <i class="fa-solid fa-caret-right"></i></button>
-      <!-- <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button> -->
+
       <button class="nav-link" id="v-pills-proximos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-proximos" type="button" role="tab" aria-controls="v-pills-proximos" aria-selected="false"><img src="/corte/UbicacionFooter.png" alt=""> Próximos eventos <i class="fa-solid fa-caret-right"></i></button>
       <button class="nav-link" id="v-pills-galeria-tab" data-bs-toggle="pill" data-bs-target="#v-pills-galeria" type="button" role="tab" aria-controls="v-pills-galeria" aria-selected="false"><img src="/corte/UbicacionFooter.png" alt=""> Galería <i class="fa-solid fa-caret-right"></i></button>
     </div>
     <div class="tab-content" id="v-pills-tabContent">
       <div class="tab-pane fade show active" id="v-pills-notasinteres" role="tabpanel" aria-labelledby="v-pills-notasinteres-tab" tabindex="0">
-        <?php  
+        <?php
         echo $this->contenidoNovedades;
-        
+
         ?>
 
       </div>
@@ -88,7 +88,7 @@ echo $this->banner;
   </div>
 
 </div>
-<div id="mostrar-notasinteres" class="mostrar-notasinteres">
+<div id="mostrar-notasinteres" class="mostrar-notasinteres justify-content-center d-flex">
   <?php echo $this->sliderNovedades; ?>
 </div>
 <style>
@@ -110,21 +110,17 @@ echo $this->banner;
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const tabNotasInteres = document.getElementById('v-pills-notasinteres-tab');
-   
     const tabs = document.querySelectorAll('[data-bs-toggle="pill"]');
-
     const mostrarNotasInteres = document.getElementById('mostrar-notasinteres');
- 
 
     // Función para mostrar/ocultar secciones
     function toggleSections(activeTabId) {
       if (activeTabId === 'v-pills-notasinteres-tab') {
+        mostrarNotasInteres.classList.add('d-flex');
         mostrarNotasInteres.classList.remove('d-none');
-        // mostrarNormatividad.classList.add('d-none');
-      }  else {
+      } else {
+        mostrarNotasInteres.classList.remove('d-flex');
         mostrarNotasInteres.classList.add('d-none');
-        // mostrarNormatividad.classList.add('d-none');
       }
     }
 
@@ -135,7 +131,26 @@ echo $this->banner;
       });
     });
 
-    // Mostrar la sección "Quienes Somos" por defecto al cargar la página
-    toggleSections('v-pills-notasinteres-tab');
+    // Función para activar la pestaña basada en el hash de la URL
+    function activateTabFromHash() {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetTab = document.querySelector(hash + '[data-bs-toggle="pill"]');
+        if (targetTab) {
+          const tab = new bootstrap.Tab(targetTab);
+          tab.show();
+          toggleSections(targetTab.id);
+        }
+      } else {
+        // Mostrar la sección "Notas de Interés" por defecto al cargar la página
+        toggleSections('v-pills-notasinteres-tab');
+      }
+    }
+
+    // Activar la pestaña correcta al cargar la página
+    activateTabFromHash();
+
+    // Re-activar la pestaña correcta cuando se cambia el hash de la URL
+    window.addEventListener('hashchange', activateTabFromHash);
   });
 </script>
